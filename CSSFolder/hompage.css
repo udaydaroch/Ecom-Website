@@ -1,0 +1,128 @@
+body {
+ 
+ background-color: rgb(255, 255, 255);
+}
+
+header {
+  margin-left: 0px;
+  margin-right: 0px;
+  padding-top: 10px;
+  padding-bottom:10px;
+  background-color: rgb(45, 51, 90);
+  text-align: center;
+  border-radius: 2px;
+  font-size:2em;
+  color:rgb(164, 192, 232);
+}
+
+header img {
+  width: 30%;
+  height: auto;
+}
+
+.search-form {
+  padding-top: 20px;
+  display: block;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: rgb(227, 218, 218);
+  padding-bottom: 20px;
+  border-radius: 4px;
+}
+.text {
+  width: 30%;
+  height: 30px;
+}
+.submit 
+{
+  background-color: rgb(177, 173, 214);
+  width: 100px;
+  height: 35px;
+  border-radius: 2px;
+
+}
+
+.pagination {
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap:wrap;
+  width: 80%;
+  font-size: 100px;
+  height: 1000px;
+  border-radius: 10px;
+  background-color: rgb(221, 198, 198);
+  margin-top: 20px;
+  margin-left:10%;
+  margin-bottom: 20px; /* Add bottom margin as needed */
+}
+a {
+  text-decoration: none;
+  display: inline-block;
+  padding: 15px 25px;
+}
+
+a:hover {
+  background-color: rgb(89, 89, 156);
+  color: black;
+  
+}
+.previous {
+  background-color: #f1f1f1;
+  color: black;
+  border-radius: 10px;
+}
+
+.next {
+  background-color:rgb(177, 173, 214);
+  color: white;
+  border-radius: 10px;
+}
+
+.round {
+  border-radius: 50%;
+}
+
+.card {
+  width: 44%;
+  height: 30%;
+  margin: 4px;
+  background-color: #ddd;
+  border-radius: 20px;
+}
+
+.viewButton {
+  margin-top:250px;
+  padding: 10px 15px;
+  border-radius: 10px;
+  background-color:rgb(177, 173, 214);
+  color: white;
+  border-color:#ddd;
+
+}
+
+.bottomInfo{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap:wrap;
+  width: 100%;
+  font-size: 100px;
+  height: 300px;
+  border-radius: 10px;
+  background-color: rgb(45, 51, 90);
+  margin: auto; /* Center the div horizontally */
+  margin-top: 20px; /* Add top margin as needed */
+}
+
+
+
+.new-div {
+  width: 44%;
+  height: 30%;
+  margin: 4px;
+  background-color: #ddd;
+  border-radius: 20px;
+}
