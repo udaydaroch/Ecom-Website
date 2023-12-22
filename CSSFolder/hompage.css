@@ -49,13 +49,14 @@ header img {
   justify-content: space-around;
   align-items: center;
   flex-wrap:wrap;
-  width: 80%;
+  width: 60%;
   font-size: 100px;
   height: 1000px;
   border-radius: 10px;
   background-color: rgb(221, 198, 198);
   margin-top: 20px;
-  margin-left:10%;
+  margin-left:auto;
+  margin-right:auto;
   margin-bottom: 20px; /* Add bottom margin as needed */
 }
 a {
@@ -88,7 +89,6 @@ a:hover {
 .card {
   width: 44%;
   height: 30%;
-  margin: 4px;
   background-color: #ddd;
   border-radius: 20px;
 
@@ -101,7 +101,6 @@ a:hover {
   border-radius: 20px;
   margin-left: 20px;
   margin-right: 20px;
-  margin-bottom: 400px;
 }
 
 .photos:hover {
@@ -150,12 +149,17 @@ a:hover {
   margin-top: 20px; /* Add top margin as needed */
 }
 
-
-
 .new-div {
   width: 44%;
   height: 30%;
   margin: 4px;
   background-color: #ddd;
   border-radius: 20px;
+}
+
+.table {
+  background-color:rgb(177, 173, 214);
+  padding: 35% 21%;
+  margin-top: 20px;
+  border-radius: 5px;
 }
