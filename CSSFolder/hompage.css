@@ -1,6 +1,6 @@
 body {
- 
  background-color: rgb(255, 255, 255);
+ min-width: 800px;
 }
 
 header {
@@ -91,6 +91,29 @@ a:hover {
   margin: 4px;
   background-color: #ddd;
   border-radius: 20px;
+
+}
+
+.photos {
+  width: 100px;
+  height: 100px;
+  background-color: #ddd;
+  border-radius: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 400px;
+}
+
+.photos:hover {
+  background-color: rgb(162, 162, 199);
+  color: black;
+}
+.productcard {
+  width: 70%;
+  height: 40%;
+  margin: 4px;
+  background-color: #ddd;
+  border-radius: 20px;
 }
 
 .viewButton {
@@ -100,7 +123,17 @@ a:hover {
   background-color:rgb(177, 173, 214);
   color: white;
   border-color:#ddd;
+  margin-left: 20px;
+}
 
+
+.BackButton {
+
+  padding: 11px 30px;
+  border-radius: 10px;
+  background-color: rgb(177, 173, 214);
+  color: white;
+  border-color: #ddd;
 }
 
 .bottomInfo{
