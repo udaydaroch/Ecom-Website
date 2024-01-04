@@ -1,1 +1,8 @@
 base plan:
+interface 
+3 photos
+name of the product
+size of the product
+cost of the product
+total number of product
+and total number at specific size
