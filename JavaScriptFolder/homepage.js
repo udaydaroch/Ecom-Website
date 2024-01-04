@@ -1,10 +1,13 @@
+
 document.addEventListener("DOMContentLoaded", function () {
   const paginationContainer = document.getElementById("pagination");
   const wishlistContainer = document.getElementById("listOfItemSelected");
   const counterContainer = document.getElementById("totalamount");
+  
 
+  
   const numRows = 2;
-  const cardsPerRow = 10;
+  const cardsPerRow = 3;
 
   function addToCartHandler() {
     const card = this.closest('.card');
@@ -55,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
   
-    wishlistItem.innerHTML = '';
+    wishlistItem.innerHTML = "";
 
     wishlistItem.appendChild(decrementButton);
     wishlistItem.appendChild(document.createTextNode(`(${(count)})`));
@@ -80,6 +83,12 @@ document.addEventListener("DOMContentLoaded", function () {
       0
     );
 
+    document.getElementById("confirmOrder").addEventListener("click", function () {
+    if (totalItems > 0) {
+      window.location.href = "confirmationpage.html";
+      }
+    });
+    
     // Update the counter display
     counterContainer.textContent = `Total Items: ${totalItems}`;
   }

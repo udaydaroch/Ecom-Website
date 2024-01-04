@@ -55,7 +55,6 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  overflow-y:auto;
   scroll-behavior: smooth;
 }
 
@@ -68,9 +67,8 @@ body {
   flex-direction: column;
   justify-content: space-between;
   background-color: rgb(255, 255, 255);
-  height: 300px;
-  overflow-y: auto;
-  width: 250px;
+  height: 360px;
+  width: 310px;
   margin-right: 8px;
   margin-left: 8px;
   border-radius: 8px;
@@ -82,7 +80,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-left:40px;
+  margin-left:21%;
   margin-top: 10px;
   margin-bottom:25px;
   text-decoration: underline;
@@ -90,17 +88,18 @@ body {
 
 #listOfItemSelected {
   overflow-y: auto;
-  margin-right: 20px;
+  margin-right: 10px;
+  margin-left: 30px;
   min-height: 180px;
   border-color: black;
   margin-bottom:20px;
 }
 
 .totalamount {
-  font-size: 40x;
-  margin-bottom: 20px;
+  font-size: 20x;
+  margin-bottom: 30px;
   margin-left: 20px;
-  margin-right: 20px;
+
 }
 
 .bottompart {
@@ -110,7 +109,6 @@ body {
   padding-bottom: 150px;
   background-color: rgb(78, 78, 141);
 }
-
 
 .button {
   width: 90px;
@@ -131,4 +129,16 @@ body {
   height:20px;
   border-radius:20px;
   background-color: rgb(230, 167, 167);
+}
+
+#confirmOrder {
+  width: 130px;
+  height: 29px;
+  margin-left: 27%;
+  margin-bottom: 10px;
+  background-color: rgb(211, 199, 235);
+  border-radius: 20px;
+}
+#confirmOrder:hover {
+  background-color: rgb(145, 116, 206);
 }
