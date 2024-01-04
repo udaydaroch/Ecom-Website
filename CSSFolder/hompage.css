@@ -88,8 +88,8 @@ body {
 
 #listOfItemSelected {
   overflow-y: auto;
-  margin-right: 10px;
-  margin-left: 30px;
+  margin-right: 20px;
+  margin-left: 20px;
   min-height: 180px;
   border-color: black;
   margin-bottom:20px;
