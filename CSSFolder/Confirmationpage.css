@@ -50,8 +50,8 @@ body {
   justify-content: center;
   align-items: center;
   background-color: aliceblue;
- 
 }
+
 .forminfo input[type="text"],.forminfo input[type="tel"] {
   width: 100%; /* Make input fields expand to full width */
   padding-top: 10px;
