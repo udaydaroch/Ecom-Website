@@ -82,15 +82,13 @@ document.addEventListener("DOMContentLoaded", function () {
       (total, item) => total + parseInt(item.dataset.count, 10),
       0
     );
-
-    document.getElementById("confirmOrder").addEventListener("click", function () {
-    if (totalItems > 0) {
-      window.location.href = "confirmationpage.html";
-      }
-    });
-    
     // Update the counter display
     counterContainer.textContent = `Total Items: ${totalItems}`;
+    document.getElementById("confirmOrder").addEventListener("click", function () {
+      if ( counterContainer.textContent != `Total Items: 0`) {
+        window.location.href = "confirmationpage.html";
+        }
+      });
   }
 
   for (let i = 0; i < numRows; i++) {
@@ -104,7 +102,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const viewButton = document.createElement("button");
       viewButton.className = "button";
-      viewButton.textContent = "View";
+      viewButton.textContent = "View More";
 
       const addButton = document.createElement("button");
       addButton.className = "button";
