@@ -42,12 +42,17 @@
         </div>
         <div>
           <input type="radio" id="Delivery" name="Options" />
-          <label for="Delivery">Delivery</label>
+          <label id="delivery" for="Delivery">Delivery(Pay Online)</label>
         </div>
-        <div>
-          <input type="radio" id="PayOnline" name="Options" />
-          <label for="PayOnline">Pay Online</label>
-        </div>
+        <br> 
+        <br>
+        <div> 
+          <div> 
+            <label id="userCommentLabel" for="userCommentInput">Any additional notes:</label>
+            <textarea id="userCommentInput" name="userComment"></textarea>
+          </div>
+          
+        </div>        
       </form>
     </div>
     <button class="Nextbutton" onclick="disableForm()">Continue</button>

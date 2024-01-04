@@ -32,33 +32,42 @@ body {
 
 .formcard {
   display: flex;
-  font-size: 22px;
+  font-size: 18px;
   background-color: rgb(210, 231, 238);
   height: 800px;
-  width: 700px;
+  width: 750px;
   border-radius: 10px;
 }
 
 .formBox {
  
   margin-top: 10px;
-  width: 1700px;
-  height: 775px;
-  margin-right: 80px;
+  width: 400px;
+  height: 750px;
+  margin-left: 10px;
+  margin-right:10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: aliceblue;
+ 
 }
-.forminfo input[type="text"],
-.forminfo input[type="tel"],
-.forminfo input[type="email"]  {
-  width: 190%; /* Make input fields expand to full width */
+.forminfo input[type="text"],.forminfo input[type="tel"] {
+  width: 100%; /* Make input fields expand to full width */
   padding-top: 10px;
-  padding-left: 2px;
-  padding-bottom: 10px;
-  margin: auto;
+  padding-bottom: 5px;
+}
+.forminfo input[type="email"]  {
+  width: 100%; /* Make input fields expand to full width */
+  padding-top: 10px;
+  padding-bottom: 5px;
   font-size: 20px; /* Adjust the font size of input fields as needed */
 }
 .forminfo {
  margin-top: 110px;
- margin-right: 110px;
+ margin-right: 80px;
+ margin-left: 80px;
+
 }
 .backbutton, .Nextbutton{
   height: 30px;
@@ -72,14 +81,29 @@ body {
   margin-top: 50px;
   margin-right: 20px;
 }
+
 .Nextbutton {
   margin-top: 50px;
-  margin-right: 80px;
+  margin-right: 500px;
 }
+
 .bottompart {
   display: flex;
   justify-content: center;
   align-items: center;
   padding-bottom: 150px;
   background-color: rgb(78, 78, 141);
+}
+
+#userCommentLabel {
+  display: block;
+}
+
+#userCommentInput {
+  display: block;
+  width: 310px;
+  height: 150px;
+  max-width: 310px;
+  max-height: 150px;
+  padding: 5px; /* Add padding to control spacing */
 }
