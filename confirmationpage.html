@@ -3,9 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" type="text/css" href="../CSSFolder/Login.css">
+    <link rel="stylesheet" type="text/css" href="../CSSFolder/Confirmationpage.css">
     
 </head>
 <body> 
-  <h1>            confrimation page</h1>
+
+  <header class="header"></header>
+  <div class ="form">
+    <div class="formcard">
+      <button class="backbutton" onclick="window.location.href='index.html'">back</button>
+      <div id = "formbox"class ="formBox">
+      <form  class="forminfo">
+        <div>
+          <label form="first name">First name: </label>
+          <input type="text" id="fname" name ="fname" placeholder="enter name...">
+        </div>
+        <br>
+        <div>
+          <label form="Last name">Last name: </label>
+          <input type="text" id="Lname" name ="lname" placeholder="enter name...">
+        </div>
+        <br>
+        <div>
+          <label form="phone #"> Phone #:</label>
+          <input type="tel" id="phone" name="phone" placeholder="64 88 888 8888">
+        </div>
+        <br> 
+        <div> 
+          <label form="email">Email: </label>
+          <input type="email" id="email" name="email" placeholder="NebulaClothing@gmail.com">
+        </div>
+        <br> 
+        <div class="OrderType"> Order Type: </div>
+        <br>
+        <div>
+          <input type="radio" id="PickUp" name="Options" />
+          <label for="PickUp">Pick up at store</label>
+        </div>
+        <div>
+          <input type="radio" id="Delivery" name="Options" />
+          <label for="Delivery">Delivery</label>
+        </div>
+        <div>
+          <input type="radio" id="PayOnline" name="Options" />
+          <label for="PayOnline">Pay Online</label>
+        </div>
+      </form>
+    </div>
+    <button class="Nextbutton" onclick="disableForm()">Continue</button>
+    </div>
+  </div>
+  <div class ="bottompart"></div>
+  <script src="../JavaScriptFolder/Confirmationpage.js"></script>
 </body>

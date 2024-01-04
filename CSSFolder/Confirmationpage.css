@@ -1,0 +1,85 @@
+body {
+  background-color: rgb(250, 237, 237);
+  margin: 0;
+  min-width: 950px;
+  min-height:300px;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 150px;
+  background-color: rgb(78, 78, 141);
+}
+
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.formcard {
+  display: flex;
+  font-size: 22px;
+  background-color: rgb(210, 231, 238);
+  height: 800px;
+  width: 700px;
+  border-radius: 10px;
+}
+
+.formBox {
+ 
+  margin-top: 10px;
+  width: 1700px;
+  height: 775px;
+  margin-right: 80px;
+}
+.forminfo input[type="text"],
+.forminfo input[type="tel"],
+.forminfo input[type="email"]  {
+  width: 190%; /* Make input fields expand to full width */
+  padding-top: 10px;
+  padding-left: 2px;
+  padding-bottom: 10px;
+  margin: auto;
+  font-size: 20px; /* Adjust the font size of input fields as needed */
+}
+.forminfo {
+ margin-top: 110px;
+ margin-right: 110px;
+}
+.backbutton, .Nextbutton{
+  height: 30px;
+  width: 100px;
+  font-size: 20px;
+  border-radius: 5px;
+  background-color: rgb(166, 138, 222);
+}
+.backbutton {
+  margin-left: 80px;
+  margin-top: 50px;
+  margin-right: 20px;
+}
+.Nextbutton {
+  margin-top: 50px;
+  margin-right: 80px;
+}
+.bottompart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 150px;
+  background-color: rgb(78, 78, 141);
+}
