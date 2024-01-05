@@ -1,7 +1,8 @@
 body {
   background-color: rgb(250, 237, 237);
   margin: 0;
-  min-width: 800px;
+  min-width: 1100px;
+  overflow-x: auto;
   min-height:350px;
 }
 
@@ -39,7 +40,7 @@ body {
 
 /* Add this style to your existing styles */
 .card {
-  width: 200px;
+  width: 350px;
   height: 200px;
   background-color: aliceblue;
   border-radius: 8px;
@@ -51,9 +52,7 @@ body {
 
 .pagination {
   background-color: rgb(220, 171, 220);
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-bottom:20px;
+  padding-bottom:2px;
   margin-right: 2px;
   margin-left: 2px;
   border-radius: 8px;
@@ -81,7 +80,7 @@ body {
 }
 
 .wishlistcontent {
-  font-size: 30px;
+  font-size: 27px;
   display: inline-block;
   justify-content: space-between;
   align-items: center;
@@ -107,7 +106,6 @@ body {
   margin-left: 20px;
 
 }
-
 
 .button {
   width: 90px;
@@ -163,68 +161,13 @@ body {
 
 .bottompart {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
-  height: 220px;
+  padding-bottom: 50px;
   background-color: rgb(78, 78, 141);
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  transform: translateY(100%);
-  transition: transform 0.3s ease-in-out;
-  z-index: 999;
 }
-
 
 .map {
   margin-top: 50px;
-  margin-right: 80px;
-}
-
-
-.hours {
-  margin-top: 10px; /* Add a margin to create space between OpeningHoursLabel and hours */
-}
-
-.hours td {
-  padding-right: 20px; /* Adjust the padding as needed for spacing between the days and time */
-}
-
-
-.map {
-  margin-top: 1px;
-  margin-right: 80px;
-}
-
-.OpeningHoursLabel {
-  font-size: 40px;
-  margin-left: 25px;
-  margin-top: 205px;
-  color: white;
-  text-decoration: underline;
-}
-
-.contactInfo {
-  font-size: 40px;
-  margin-top: 500px;
-  margin-bottom: 292px;
-  color: white;
-  text-decoration: underline;
-  overflow-x: hidden; /* or remove this line */
-}
-
-.hours {
-  font-size: 18px;
-  margin-bottom: 240px;
-  margin-left: 20px;
-  margin-top: 20px;
-  padding-right: 20px;
-  color: white;
-}
-
-.contactdetails {
-  font-size: 18px;
-  margin-bottom: 245px;
-  padding-right: 20px;
-  color: rgb(255, 255, 255);
+  margin-right: 1000p;
 }
