@@ -1,6 +1,6 @@
 function OrderTypeProcess() {
 
-  
+
   var orderType;
   if(document.getElementById("PickUp").checked)
   {
@@ -23,3 +23,17 @@ function OrderTypeProcess() {
 
 
 }
+
+window.addEventListener('scroll', function() {
+  var bottomPart = document.querySelector('.bottompart');
+  var scrollPosition = window.scrollY;
+
+  // Adjust the threshold based on your preference
+  var threshold = 150;
+
+  if (scrollPosition > threshold) {
+    bottomPart.style.transform = 'translateY(0)';
+  } else {
+    bottomPart.style.transform = 'translateY(100%)';
+  }
+});

@@ -3,7 +3,19 @@ document.addEventListener("DOMContentLoaded", function () {
   const paginationContainer = document.getElementById("pagination");
   const wishlistContainer = document.getElementById("listOfItemSelected");
   const counterContainer = document.getElementById("totalamount");
-  
+  window.addEventListener('scroll', function() {
+    var bottomPart = document.querySelector('.bottompart');
+    var scrollPosition = window.scrollY;
+
+    // Adjust the threshold based on your preference
+    var threshold = 150;
+
+    if (scrollPosition > threshold) {
+      bottomPart.style.transform = 'translateY(0)';
+    } else {
+      bottomPart.style.transform = 'translateY(100%)';
+    }
+  });
 
   
   const numRows = 2;
