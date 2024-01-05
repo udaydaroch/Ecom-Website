@@ -1,7 +1,7 @@
 body {
   background-color: rgb(250, 237, 237);
   margin: 0;
-  min-width: 950px;
+  min-width: 800px;
   min-height:350px;
 }
 
@@ -29,10 +29,11 @@ body {
 
 .sidebar {
   background-color: rgb(106, 77, 159);
-  padding: 15% 10%;
   margin-right: 10px;
   margin-left: 10px;
   border-radius: 8px;
+  height: 150px;
+  width: 100px;
 }
 
 
@@ -49,7 +50,7 @@ body {
 }
 
 .pagination {
-  background-color: rgb(199, 138, 197);
+  background-color: rgb(220, 171, 220);
   padding-left: 10px;
   padding-right: 10px;
   padding-bottom:20px;
@@ -81,10 +82,10 @@ body {
 
 .wishlistcontent {
   font-size: 30px;
-  display: flex;
+  display: inline-block;
   justify-content: space-between;
   align-items: center;
-  margin-left:21%;
+  margin-left: 20%;
   margin-top: 10px;
   margin-bottom:25px;
   text-decoration: underline;
@@ -129,6 +130,25 @@ body {
   background-color: rgb(230, 167, 167);
 }
 
+
+.sidebar a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 18px;
+  color: white;
+  display: block;
+  transition: 0.3s;
+  padding-left: 20px; /* Adjust the value based on how much you want to move the text to the right */
+}
+
+.sidebar a:hover {
+  background-color: #c1b7b7;
+  padding-left: 20px; 
+  padding-bottom:10px;
+  border-radius: 8px;
+}
+
+
 #confirmOrder {
   width: 130px;
   height: 29px;
@@ -145,7 +165,7 @@ body {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  height: 200px;
+  height: 220px;
   background-color: rgb(78, 78, 141);
   position: fixed;
   bottom: 0;
@@ -178,8 +198,8 @@ body {
 
 .OpeningHoursLabel {
   font-size: 40px;
-  margin-left: 20px;
-  margin-top: 200px;
+  margin-left: 25px;
+  margin-top: 205px;
   color: white;
   text-decoration: underline;
 }
