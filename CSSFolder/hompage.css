@@ -3,7 +3,7 @@ body {
   margin: 0;
   min-width: 1200px;
   overflow-x: auto;
-  min-height:350px;
+  height:800px;
 }
 
 .content {
@@ -11,8 +11,7 @@ body {
   justify-content: center;
   align-items: flex-start;
   padding-top: 20px;
-  height: 900px;
-  overflow-y: auto;
+  height: 1000px;
   padding-bottom: 20px;
 }
 
