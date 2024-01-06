@@ -191,7 +191,7 @@
         </div>
     </div>
 
-    <!-- Your existing code and scripts can go here -->
+    <!-- Placeholder for product content -->
 
     <script>
         // Example function to simulate canceling a booking
