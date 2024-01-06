@@ -59,3 +59,85 @@
 .navbar-brand {
   font-size: 40px;
 }
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<!-- new code -->
+/* General styling for the login card */
+.LoginCard {
+  /* Flex container styles */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+  min-height: 400px;
+  margin: 20px auto;
+  /* Gradient background */
+  background: linear-gradient(135deg, #3498db, #9b59b6);
+  color: #ecf0f1;
+  border-radius: 12px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Styling for the inner content of the login card */
+.LoginCardInside {
+  /* Width and scrolling */
+  width: 80%;
+  max-height: 400px; /* Added a max-height to enable vertical scrolling */
+  overflow-y: auto; /* Added overflow-y property for vertical scrollbar */
+  overflow-x: auto; /* Added overflow-x property for horizontal scrollbar */
+  /* Padding and background */
+  padding: 40px;
+  background: linear-gradient(135deg, #2c3e50, #34495e);
+  border-radius: 12px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Styling for the last section within the login card */
+.last-section {
+  /* Flex container styles */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+/* Styling for the third section with a different background color */
+.thirddiv {
+  /* Width and scrolling */
+  width: 80%;
+  max-height: 400px; /* Added a max-height to enable vertical scrolling */
+  overflow-y: auto; /* Added overflow-y property for vertical scrollbar */
+  overflow-x: auto; /* Added overflow-x property for horizontal scrollbar */
+  /* Padding and background */
+  padding: 40px;
+  background: linear-gradient(135deg, #3498db, #9b59b6);
+  color: #ecf0f1;
+  border-radius: 12px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Styling for navigation links */
+.nav-link {
+  /* Font and text styles */
+  font-size: 18px;
+  color: #ffffff;
+  text-decoration: none;
+  margin: 10px 0;
+  /* Hover effect */
+  transition: color 0.3s ease-in-out;
+}
+
+/* Styling for navigation links on hover */
+.nav-link:hover {
+  /* Hover color change */
+  color: #f39c12;
+}
+
+/* Styling for the navbar brand */
+.navbar-brand {
+  /* Font and text styles */
+  font-size: 36px;
+  color: #ffffff;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
