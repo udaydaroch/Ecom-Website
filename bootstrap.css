@@ -222,7 +222,44 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
   color: var(--bs-heading-color);
 }
 
+.LoginCard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+  height: 700px;
+  border-radius:4px;
+  background-color: #bbaee7;
+}
 
+.LoginCardInside {
+  width: 70%;
+  height: 600px;
+  background-color: white;
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+}
+
+.last-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.thirddiv {
+  width: 85%;
+  height: 500px;
+  background-color: white;
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  background-color: rgb(237, 237, 237);
+}
 
 
 h1, .h1 {
@@ -3817,8 +3854,8 @@ textarea.form-control-lg {
 }
 
 .nav {
-  --bs-nav-link-padding-x: 1rem;
-  --bs-nav-link-padding-y: 0.5rem;
+  --bs-nav-link-padding-x: 3rem;
+  --bs-nav-link-padding-y: 1rem;
   --bs-nav-link-font-weight: ;
   --bs-nav-link-color: var(--bs-link-color);
   --bs-nav-link-hover-color: var(--bs-link-hover-color);
@@ -3833,7 +3870,7 @@ textarea.form-control-lg {
 .nav-link {
   display: block;
   padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
-  font-size: var(--bs-nav-link-font-size);
+  font-size: 30px;
   font-weight: var(--bs-nav-link-font-weight);
   color: var(--bs-nav-link-color);
   text-decoration: none;
@@ -3847,8 +3884,13 @@ textarea.form-control-lg {
   }
 }
 .nav-link:hover, .nav-link:focus {
-  color: var(--bs-nav-link-hover-color);
+  font-size:32px;
+  background-color: rgb(213, 197, 176);
+  color:rgb(96, 82, 108)
 }
+
+
+
 .nav-link:focus-visible {
   outline: 0;
   box-shadow: 0 0 0 0.25rem rgba(199, 205, 213, 0.25);
@@ -3995,7 +4037,7 @@ textarea.form-control-lg {
   padding-top: var(--bs-navbar-brand-padding-y);
   padding-bottom: var(--bs-navbar-brand-padding-y);
   margin-right: var(--bs-navbar-brand-margin-end);
-  font-size: var(--bs-navbar-brand-font-size);
+  font-size: 37px;
   color: var(--bs-navbar-brand-color);
   text-decoration: none;
   white-space: nowrap;
@@ -4069,6 +4111,7 @@ textarea.form-control-lg {
   outline: 0;
   box-shadow: 0 0 0 var(--bs-navbar-toggler-focus-width);
 }
+
 
 .navbar-toggler-icon {
   display: inline-block;
@@ -4274,6 +4317,8 @@ textarea.form-control-lg {
     overflow-y: visible;
   }
 }
+
+
 @media (min-width: 1400px) {
   .navbar-expand-xxl {
     flex-wrap: nowrap;
@@ -4509,6 +4554,7 @@ textarea.form-control-lg {
   padding: var(--bs-card-img-overlay-padding);
   border-radius: var(--bs-card-inner-border-radius);
 }
+
 
 .card-img,
 .card-img-top,
@@ -6051,6 +6097,7 @@ textarea.form-control-lg {
   display: none;
   float: left;
   width: 100%;
+  height: 600px;
   margin-right: -100%;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
@@ -6068,9 +6115,15 @@ textarea.form-control-lg {
   display: block;
 }
 
+.carousel-item img {
+  height: 400px; /* Adjust the height as needed */
+  object-fit: cover; /* This property ensures the image covers the entire container while maintaining its aspect ratio */
+}
+
+
 .carousel-item-next:not(.carousel-item-start),
 .active.carousel-item-end {
-  transform: translateX(100%);
+  transform: translate(100%);
 }
 
 .carousel-item-prev:not(.carousel-item-end),
@@ -6168,6 +6221,7 @@ textarea.form-control-lg {
 .carousel-control-next-icon {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
 }
+
 
 .carousel-indicators {
   position: absolute;
