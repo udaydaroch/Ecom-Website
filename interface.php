@@ -151,10 +151,25 @@
             <div class="product-info">
                 <!-- Name, size, cost, total number, and total number at a specific size -->
                 <h3>Product Name</h3>
-                <p>Size: Medium</p>
-                <p>Cost: $50.00</p>
-                <p>Total Available: 100</p>
-                <p>Total Available (Medium): 30</p>
+                <!-- Button to prompt the customer for their size -->
+                <button onclick="askForSize()">Select Your Size</button>
+                
+                <!-- Placeholder for displaying selected size -->
+                <p id="selectedSize">Selected Size: Not chosen</p>
+            <p>Size: Small</p>
+            <p>Cost: $50.00</p>
+            <p>Total Available: 100</p>
+            <p>Total Available (Small): 10</p> <!-- Section for small size -->
+            
+            <p>Size: Medium</p>
+            <p>Cost: $50.00</p>
+            <p>Total Available: 100</p>
+            <p>Total Available (Medium): 30</p> <!-- Section for medium size -->
+            
+            <p>Size: Large</p>
+            <p>Cost: $50.00</p>
+            <p>Total Available: 100</p>
+            <p>Total Available (Large): 15</p> <!-- Section for large size -->
             </div>
         </div>
     </div>
@@ -197,6 +212,17 @@
         // Example function to simulate canceling a booking
         function cancelBooking() {
             alert("Booking canceled!");
+        }
+
+        // Function to prompt the customer for their size
+        function askForSize() {
+            // You can implement a modal, form, or other UI to gather the size from the customer
+            // For simplicity, this example uses a prompt dialog
+            var size = prompt("Please enter your size (Small, Medium, Large):");
+            
+            // Display the selected size
+            var selectedSizeElement = document.getElementById("selectedSize");
+            selectedSizeElement.textContent = "Selected Size: " + size;
         }
     </script>
 </body>
