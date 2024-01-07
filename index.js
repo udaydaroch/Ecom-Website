@@ -23,10 +23,10 @@ function generateCard(data) {
 
   for (let i = 0; i < data.length; i++) {
       var colDiv = document.createElement('div');
-      colDiv.className = 'col-lg-4 col-md-5 col-sm-12';
+      colDiv.className = 'col-lg-4 col-md-6 col-sm-12';
 
       var cardDiv = document.createElement('div');
-      cardDiv.className = 'card mb-5 shadow-sm';
+      cardDiv.className = 'card mb-5 shadow-lg';
 
       var imgElement = document.createElement('img');
       imgElement.src = data[i].imgSrc;
