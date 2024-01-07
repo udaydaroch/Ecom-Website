@@ -3884,7 +3884,7 @@ textarea.form-control-lg {
   }
 }
 .nav-link:hover, .nav-link:focus {
-  font-size:28px;
+  font-size:25px;
   background-color: rgb(213, 197, 176);
   color:rgb(96, 82, 108)
 }

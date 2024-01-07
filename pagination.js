@@ -1,15 +1,3 @@
-<!-- 1. Server-side Pagination:
-Modify Server Endpoint:
-Ensure your server-side API endpoint supports pagination by including parameters like page and itemsPerPage. The server should return the requested page of data along with metadata such as the total number of items and pages.
-2. Client-side Pagination:
-Use a Front-end Framework:
-Consider using a front-end framework like React, Angular, or Vue.js for more organized and maintainable code. These frameworks often have built-in support for managing state, making AJAX requests, and rendering components. -->
-
-<!-- HTML Structure -->
-<div id="content"></div>
-<div id="pagination"></div>
-
-<!-- Javascript Code -->
 const contentContainer = document.getElementById('content');
 const paginationContainer = document.getElementById('pagination');
 

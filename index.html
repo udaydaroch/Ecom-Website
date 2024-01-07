@@ -44,47 +44,48 @@
       </div>
     </div>
   </nav>
-    <br>
-    <div class="container position-relative text-center">
-      <header class="position-relative text-center text-white mb-10>">
-        
-        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-          </div>
-          <div class="carousel-inner">
-            <div class="carousel-item active" data-bs-interval="7000">
-              <img id="mainImages" src="shirt1.png" class="d-block w-100 h-100" alt="...">
+
+  
+  <div class="container-fluid">
+     <div class="row">
+         <div class="d-flex flex-column justify-content-between col-auto bg-dark min-vh-100">
+            <div class="mt-4">
+                <a class="text-white text-decoration-none d-flex align-items-center ms-4" role="button">
+                    <span class="fs-2">Products</span>
+                </a>
+                <hr class="text-white"/>
+                <ul class="nav flex-column mt-2 mt-sm-0" id="menu">
+                    <li class="nav-item"> 
+                        <a href="#" class="nav-link text-white" aria-current="page">
+                            <i class="fa fa-gauge"></i>
+                            <span id="shirtsLink" class="ms-2">Shirts</span>
+                        </a>
+                    </li>
+                    <li class="nav-item"> 
+                        <a href="#" class="nav-link text-white" aria-current="page">
+                            <i class="fa fa-home"></i>
+                            <span id="shoesLink" class="ms-2">Shoes</span>
+                        </a>
+                    </li>
+                    <li class="nav-item"> 
+                        <a href="#sidemenu" data-bs-toggle="collapse" class="nav-link text-white" aria-current="page">
+                            <i class="fa fa-gauge"></i>
+                            <span class="ms-2">Shoes</span>
+                        </a>
+                    </li>
+                </ul>
             </div>
-            <div class="carousel-item" data-bs-interval="7000">
-              <img id="mainImages" src="shirt2.png" class="d-block w-100 h-100" alt="...">
-            </div>
-            <div class="carousel-item"data-bs-interval="7000">
-              <img id="mainImages" src="shirt3.png" class="d-block w-100 h-100" alt="...">
-            </div>
-          </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
         </div>
-      </header>
-      <br> 
-      <div id="cardContainer"class="row">
-
-      </div>
+        <div class="col">
+        <div id="cardContainer" class="row">
+      
+        </div>
+     </div>
+    </div>
+</div>
+  
+     
     
-    
-      <br>  
-      <div id="cardContainer" class="row">
-
-      </div>
     <script src="bootstrap.js"></script>
     <script src="index.js"></script>
 </body>
