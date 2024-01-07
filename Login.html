@@ -1,68 +1,231 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" type="text/css" href="../CSSFolder/Login.css">
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nebular Clothing</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="Login.css">
 </head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <a class="navbar-brand" href="index.php">
-            <img src="img/nebula_logo.png" width="120" height="40" alt="Nebula Clothing Logo">
-        </a>
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+<body> 
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="Companylogo.png" alt="">
+        Nebula Clothing</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link " href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Pricing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Login.html">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Signup.html">Signup</a>
+          </li>
+        </ul>
+        <br>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+        
+      </div>
+    </div>
+  </nav>
+ 
+      <section>
+       
+        <div class="container mt-5 pt-5">
+          <div class = "row">
+            <div class = "col-12 col-sm-8 col-nd-6  m-auto"> 
+             <div class ="card border-1 shadow">
+              <div class="card-body">
+                <svg class="mx-auto" xmlns="http://www.w3.org/2000/svg" width="100%" height="150" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+                  <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+                </svg>
+              
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="index.html">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="products.php">Products</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="about.php">About Us</a>
-                </li>
-                <!-- Add more navigation items as needed -->
-
-                <!-- Search Form -->
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
-                </form>
-            </ul>
-
-            <!-- Login and Register Buttons -->
-            <a href="login.php" class="btn btn-light ml-2 custom-login-button">Login</a>
+                <label htmlFor="Email"> Username:</label>
+                <input type="text" name=""  class="form-control my-2 py-2" placeholder="username" required>
+                <br>
+                <label htmlFor="Password">Password: </label>
+                <input type="text" name="" id="" class="form-control my-1 py-2" placeholder="Password" required>
+                <div class="text-center mt-3">
+                  <div class="d-grid gap-2">
+                    <button class="btn btn-primary" type="button">Login</button>
+                  </div>
+                <div class = "last-section">
+                  <div class = "checkboxcontent"> 
+                  <input type="checkbox" className="custom-control custom-checkbox" id="check"/>
+                  <label htmlFor="check" className="custom-input-label">Remember me</label>
+                </div>
+                  <a href="#" class="">Forgot password ?</a>
+                </div>
+                
+                </div>
+              
+              </div>
+             </div> 
+          </div>
         </div>
-    </nav>
-    <div class="form-container">
-        <div class="form">
-            <!-- Login Form -->
-            <form action="login_process.php" method="post">
-                <h3>Login</h3>
-                <label for="login-username">Username:</label>
-                <input type="text" name="login-username" required>
-                <label for="login-password">Password:</label>
-                <input type="password" name="login-password" required>
-                <input type="submit" value="Login" class="btn btn-primary custom-login-button">
-            </form>
+      </section>
+  
+  <script src="bootstrap.js"></script>
+</body>
 
-            <!--Registration Form-->
-            <form action="register_process.php" method="post">
-                <h3>Sign Up</h3>
-                <label for="register-username">Username:</label>
-                <input type="text" name="register-username" required>
-                <label for="register-password">Password:</label>
-                <input type="password" name="register-password" required>
-                <input type="submit" value="Sign Up" class="btn btn-primary custom-login-button">
+</html>
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<!-- New Code-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nebular Clothing</title>
+    <link rel="stylesheet" href="../CSSFolder/hompage.css">
+    <link rel="stylesheet" href="../CSSFolder/login.css"> 
+</head>
+
+<body>
+    <header class="header"></header>
+
+    <!-- Login and Registration Forms -->
+    <!-- Login Form -->
+    <div class="login-registration-forms">
+        <div class="login-container">
+            <h2>Login</h2>
+            <form action="welcome.php" method="post">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+
+                <button type="submit">Login</button>
             </form>
         </div>
     </div>
-    <script src="js/script.js"></script>
+
+    <!-- Registration Form -->
+    <div class="login-registration-forms">
+        <div class="registration-container">
+            <h2>Registration</h2>
+            <form action="welcome.php" method="post">
+                <label for="fullname">Full Name:</label>
+                <input type="text" id="fullname" name="fullname" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+
+                <button type="submit">Register</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="login-registration-forms">
+        <div class="login-container">
+            <h2>Login</h2>
+            <?php
+            if ($error_message !== "") {
+                echo '<p class="error-message">' . $error_message . '</p>';
+            }
+            ?>
+            <form action="login.php" method="post">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+
+                <button type="submit" name="submit">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- HTML code... -->
+
+<div class="content">
+    <div class="sidebar">
+        <a href="#option1">Shirt</a>
+        <a href="#option2">Jackets</a>
+        <a href="#option3">Shorts</a>
+        <a href="#option4">Shoes</a>
+    </div>
+    <div class="pagination" id="pagination"></div>
+    <div class="wishlist">
+        <div id="wishlistcontent" class="wishlistcontent">ShoppingCart</div>
+        <div id="listOfItemSelected"></div>
+        <div id="totalamount" class="totalamount">Total Items: 0</div>
+        <button id="confirmOrder">Confirm order&rarr;</button>
+    </div>
+</div>
+
+<div class="bottompart">
+    <div>
+        <div class="OpeningHoursLabel">Opening Hours</div>
+
+        <div class="hours">
+            <td>Monday - Friday: </td>
+            <td>
+                <time> 11:30 AM - 2:00 PM</time>
+            </td>
+            <br>
+            <td>Saturday: </td>
+            <td>
+                <time> 11:30 AM - 2:00 PM</time>
+            </td>
+            <br>
+            <td>Sunday: </td>
+            <td>
+                <time> 11:30 AM - 2:00 PM</time>
+            </td>
+        </div>
+    </div>
+    <div class="contactInfo">Contact Info
+        <div class="contactdetails">
+            <br>
+            <td>Christchurch - Canterbury</td>
+            <br>
+            <td>Phone:</td>
+            <br>
+            <td>Email: NebulaClothing@gmail.com</td>
+        </div>
+    </div>
+    <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2892.937894725982!2d172.6001995!3d-43.52448779999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d318af0c3f17b85%3A0xd06a344421cb05e0!2sChristchurch%20Boys&#39;%20High%20School!5e0!3m2!1sen!2snz!4v1704409442753!5m2!1sen!2snz" width="300" height="170" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+
+<script src="../JavaScriptFolder/homepage.js"></script>
 </body>
+
+</html>
+
+</body>
+
 </html>
