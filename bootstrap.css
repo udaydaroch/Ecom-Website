@@ -3870,7 +3870,7 @@ textarea.form-control-lg {
 .nav-link {
   display: block;
   padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
-  font-size: 30px;
+  font-size: 25px;
   font-weight: var(--bs-nav-link-font-weight);
   color: var(--bs-nav-link-color);
   text-decoration: none;
@@ -3884,7 +3884,7 @@ textarea.form-control-lg {
   }
 }
 .nav-link:hover, .nav-link:focus {
-  font-size:32px;
+  font-size:28px;
   background-color: rgb(213, 197, 176);
   color:rgb(96, 82, 108)
 }
