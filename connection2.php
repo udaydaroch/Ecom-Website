@@ -44,4 +44,5 @@ if ($sql->execute()) {
 $sql->close();
 $conn->close();
 ?>
-<!-- Replace the placeholder values in $host, $db_username, $db_password, and $database with the actual MySQL server details.--> 
+<!-- Replace the placeholder values in $host, $db_username, $db_password, and $database with the actual MySQL server details. And make sure the Database is in the
+same directory--> 
