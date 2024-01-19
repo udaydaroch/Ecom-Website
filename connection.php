@@ -1,6 +1,6 @@
 <?php
 
-$host = "localhost"; // Your MySQL server address
+$host = "127.0.0.1"; // Your MySQL server address
 $username = "root"; // Your MySQL username
 $password = ""; // Your MySQL password
 $database = "nebula_clothing"; // Your MySQL database name
