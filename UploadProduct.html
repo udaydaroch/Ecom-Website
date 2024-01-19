@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nebular Clothing</title>
+    <link rel="stylesheet" href="bootstrap.css">
+</head>
+
+<body onload="updateQuantities()">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="Companylogo.png" alt="">
+                Nebula Clothing</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link " href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="adminDashboard.html">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Login.html">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Signup.html">Signup</a>
+                    </li>
+                </ul>
+                <br>
+                <form class="d-flex" role="search">
+                    <input id="searchInput" class="form-control me-2" type="search" placeholder="Search"
+                        aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <section>
+        <div class="container mt-3 - pt-2">
+            <div class="row">
+                <div class="col-12 col-sm-8 col-md-6 m-auto">
+                    <div class="card border-1 shadow">
+                        <div class="card-body">
+                            <h2 class="display-4 text-center">Upload Clothing</h2>
+                            <form action="clothes_upload.php" method="post" enctype="multipart/form-data" onsubmit="updateQuantities()">
+                                <label for="image">Cloth Image:</label>
+                                <input type="file" name="image" id="image" class="form-control my-2 py-2" accept="image/*">
+                                <br>
+                                <label for="clothTitle">Cloth Title:</label>
+                                <input type="text" name="clothTitle" id="clothTitle" class="form-control my-2 py-2" placeholder="Cloth Title" required>
+                                <br>
+                                <label for="clothName">Cloth Name:</label>
+                                <input type="text" name="clothName" id="clothName" class="form-control my-1 py-2" placeholder="Cloth Name" required>
+                                <br>
+                                <label for="description">Description:</label>
+                                <textarea name="description" id="description" class="form-control my-2 py-2" placeholder="Description" rows="4" required></textarea>
+                                <br>
+                                <label for="price">Price:</label>
+                                <input type="number" name="price" id="price" class="form-control my-2 py-2" placeholder="Price" required>
+                                <br>
+                                <label for="sizeAvailable">Size Available:</label>
+                                <!-- Add the onclick attribute to each checkbox for sizes -->
+                                <div class="form-check">
+                                    <input type="checkbox" name="sizeAvailable[]" id="extraSmall" class="form-check-input" value="Extra Small" onclick="updateQuantities()">
+                                    <label class="form-check-label" for="extraSmall">Extra Small</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" name="sizeAvailable[]" id="small" class="form-check-input" value="Small" onclick="updateQuantities()">
+                                    <label class="form-check-label" for="small">Small</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" name="sizeAvailable[]" id="medium" class="form-check-input" value="Medium" onclick="updateQuantities()">
+                                    <label class="form-check-label" for="medium">Medium</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" name="sizeAvailable[]" id="large" class="form-check-input" value="Large" onclick="updateQuantities()">
+                                    <label class="form-check-label" for="large">Large</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" name="sizeAvailable[]" id="extraLarge" class="form-check-input" value="Extra Large" onclick="updateQuantities()">
+                                    <label class="form-check-label" for="extraLarge">Extra Large</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" name="sizeAvailable[]" id="extraExtraLarge" class="form-check-input" value="Extra Extra Large" onclick="updateQuantities()">
+                                    <label class="form-check-label" for="extraExtraLarge">Extra Extra Large</label>
+                                </div>
+
+                                <br>
+                                <!-- Dynamically disable quantity inputs based on size availability -->
+                                <label for="totalAvailable">Quantity Available:</label>
+                                <input type="number" name="totalAvailable" id="totalAvailable" class="form-control my-2 py-2" placeholder="Quantity Available" >
+                                <br>
+                                <label for="quantityExtraSmall">Quantity Extra Small:</label>
+                                <input type="number" name="quantityExtraSmall" id="quantityExtraSmall" class="form-control my-2 py-2" placeholder="Quantity Extra Small" >
+                                <br>
+                                <label for="quantitySmall">Quantity Small:</label>
+                                <input type="number" name="quantitySmall" id="quantitySmall" class="form-control my-2 py-2" placeholder="Quantity Small" >
+                                <br>
+                                <label for="quantityMedium">Quantity Medium:</label>
+                                <input type="number" name="quantityMedium" id="quantityMedium" class="form-control my-2 py-2" placeholder="Quantity Medium" >
+                                <br>
+                                <label for="quantityLarge">Quantity Large:</label>
+                                <input type="number" name="quantityLarge" id="quantityLarge" class="form-control my-2 py-2" placeholder="Quantity Large" >
+                                <br>
+                                <label for="quantityExtraLarge">Quantity Extra Large:</label>
+                                <input type="number" name="quantityExtraLarge" id="quantityExtraLarge" class="form-control my-2 py-2" placeholder="Quantity Extra Large" >
+                                <br>
+                                <label for="quantityExtraExtraLarge">Quantity Extra Extra Large:</label>
+                                <input type="number" name="quantityExtraExtraLarge" id="quantityExtraExtraLarge" class="form-control my-2 py-2" placeholder="Quantity Extra Extra Large" >
+                                <br>
+                                <div class="text-center mt-3">
+                                    <div class="d-grid gap-2">
+                                        <button class="btn btn-primary" type="submit">Upload Cloth</button>
+                                    </div>
+                                </div>
+                            </form>
+                            <div class="last-section">
+                                <div class="checkboxcontent">
+                                    <div class="custom-input-label">Back to <a href="adminDashboard.html" id="HomeLink">Dashboard</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <script src="adminDashboard.js"></script>
+    <script src="bootstrap.js"></script>
+</body>
+
+</html>

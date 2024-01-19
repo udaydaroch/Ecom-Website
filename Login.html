@@ -27,7 +27,7 @@
             <a class="nav-link" href="#">About us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Dashboard</a>
+            <a class="nav-link" href="adminDashboard.html">Dashboard</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="Login.html">Login</a>
@@ -58,25 +58,28 @@
                   <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
                 </svg>
               
-
-                <label htmlFor="Email"> Username:</label>
-                <input type="text" name=""  class="form-control my-2 py-2" placeholder="username" required>
-                <br>
-                <label htmlFor="Password">Password: </label>
-                <input type="text" name="" id="" class="form-control my-1 py-2" placeholder="Password" required>
-                <div class="text-center mt-3">
-                  <div class="d-grid gap-2">
-                    <button class="btn btn-primary" type="button">Login</button>
+                <form action="login.php" method="post">
+                  <label for="username">Username:</label>
+                  <input type="text" name="username" class="form-control my-2 py-2" placeholder="Username" required>
+                  <br>
+                  <label for="password">Password:</label>
+                  <input type="password" name="password" class="form-control my-1 py-2" placeholder="Password" required>
+                  <div class="text-center mt-3">
+                      <div class="d-grid gap-2">
+                          <button class="btn btn-primary" type="submit">Login</button>
+                      </div>
+                      <div class="last-section">
+                          <div class="checkboxcontent">
+                              <input type="checkbox" class="custom-control custom-checkbox" id="check" />
+                              <label for="check" class="custom-input-label">Remember me</label>
+                          </div>
+                          <a href="#" class="">Forgot password?</a>
+                      </div>
                   </div>
-                <div class = "last-section">
-                  <div class = "checkboxcontent"> 
-                  <input type="checkbox" className="custom-control custom-checkbox" id="check"/>
-                  <label htmlFor="check" className="custom-input-label">Remember me</label>
-                </div>
-                  <a href="#" class="">Forgot password ?</a>
-                </div>
+              </form>
                 
-                </div>
+                
+              </div>
               
               </div>
              </div> 
