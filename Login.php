@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   if ($result->num_rows === 1) {
       // Valid username and password, allow entry
-      echo "Login successful!";
+      header("Location: adminDashboard.html");
   } else {
       // Invalid username or password
       echo "Invalid username or password";
