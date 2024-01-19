@@ -1,8 +1,8 @@
 <?php
 
-$host = "localhost:3306"; // MySQL server address
+$host = "localhost"; // MySQL server address
 $db_username = "root"; // MySQL username
-$db_password = "HOWTOma12"; // MySQL password
+$db_password = ""; // MySQL password
 $database = "nebula_clothing"; // MySQL database name
 
 $conn = new mysqli($host, $db_username, $db_password, $database);
