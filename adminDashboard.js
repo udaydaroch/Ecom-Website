@@ -16,14 +16,16 @@ function generateAdminCards() {
       title: 'View Users',
       description: 'Explore and manage the list of registered users.',
       buttonLabel: 'View Users',
-      buttonClass: 'btn btn-outline-primary'
+      buttonClass: 'btn btn-outline-primary',
+      targetPage:'viewuser.html'
     },
     {
       imgSrc: "shoppingLOGO.png",
       title: 'View Current Orders',
       description: 'Check and manage the current orders placed by users.',
       buttonLabel: 'View Orders',
-      buttonClass: 'btn btn-outline-info'
+      buttonClass: 'btn btn-outline-info',
+      targetPage:'currentOrder.html'
     }
   ];
 

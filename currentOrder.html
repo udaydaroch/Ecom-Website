@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nebular Clothing</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="dashboard.css"> <!-- Add a new CSS file for styling specific to the dashboard -->
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="Companylogo.png" alt="">
+        Nebula Clothing </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link " href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="adminDashboard.html">Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Login.html">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Signup.html">Signup</a>
+          </li>
+        </ul>
+        <br>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="d-flex flex-column justify-content-between col-auto bg-dark min-vh-100">
+                <div class="mt-4">
+                    <a class="text-white text-decoration-none d-flex align-items-center ms-4">
+                        <span class="fs-2">Orders</span>
+                    </a>
+                    <hr class="text-white" />
+                    <ul class="nav flex-column mt-2 mt-sm-0" id="menu">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link text-white" onclick="loadDeliveryOrders()">
+                                <i class="fa fa-truck"></i>
+                                <span class="ms-2">Delivery Orders</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link text-white" onclick="loadPickupOrders()">
+                                <i class="fa fa-home"></i>
+                                <span class="ms-2">Pickup Orders</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link text-white" onclick="loadQueries()">
+                                <i class="fa fa-question"></i>
+                                <span class="ms-2">Queries</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col">
+                <div id="filterSection" class="col">
+                    
+                </div>
+                <div id="tableSection" class="col">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
+    <script src="currentOrder.js"></script> <!-- Add a new JS file for dashboard-specific functionality -->
+</body>
+
+</html>

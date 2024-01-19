@@ -31,6 +31,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       echo "Invalid username or password";
   }
 
+  if ($result->num_rows === 1) {
+    // Valid username and password, allow entry
+    // Set session variable
+    session_start();
+    $_SESSION['user_authenticated'] = true;
+
+    // Redirect to index.html
+    header("Location: admindashboard.html");
+    exit(); // Make sure to exit after sending the header to prevent further execution
+} else {
+    // Invalid username or password
+    echo "Invalid username or password";
+}
+
   $stmt->close();
 }
 
