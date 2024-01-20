@@ -26,6 +26,14 @@ function generateAdminCards() {
       buttonLabel: 'View Orders',
       buttonClass: 'btn btn-outline-info',
       targetPage:'currentOrder.html'
+    },
+    {
+      imgSrc: "accounticon.png",
+      title: 'account setting',
+      description: 'Update account details',
+      buttonLabel: 'account setting',
+      buttonClass: 'btn btn-outline-secondary',
+      targetPage:'accountsetting.html'
     }
   ];
 
@@ -34,10 +42,10 @@ function generateAdminCards() {
 
   for (let i = 0; i < adminData.length; i++) {
     var colDiv = document.createElement('div');
-    colDiv.className = 'col-lg-4 col-md-6 col-sm-12';
+    colDiv.className = 'col-lg-3 col-md-4 col-sm-6 offset-sm-0';
 
     var cardDiv = document.createElement('div');
-    cardDiv.className = 'card mb-5 shadow-lg';
+    cardDiv.className = 'card mb-4 shadow-lg';
 
     var imgElement = document.createElement('img');
     imgElement.src = adminData[i].imgSrc;
@@ -59,7 +67,7 @@ function generateAdminCards() {
     pElement.textContent = adminData[i].description;
 
     var buttonDiv = document.createElement('div');
-    buttonDiv.className = 'd-grid gap-2 col-6 mx-auto';
+    buttonDiv.className = 'd-grid gap--1 col-2 mx-auto';
 
     var actionButton = document.createElement('button');
     actionButton.className = adminData[i].buttonClass;

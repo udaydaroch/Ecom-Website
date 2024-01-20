@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nebular Clothing</title>
+    <link rel="stylesheet" href="bootstrap.css">
+</head>
+
+<body onload="updateQuantities()">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="Companylogo.png" alt="">
+            Nebula Clothing </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link " href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">About us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="adminDashboard.html">Dashboard</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Login.html">Login</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Signup.html">Signup</a>
+              </li>
+            </ul>
+            <br>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+            
+          </div>
+        </div>
+      </nav>
+      <!-- Add this section below the existing section in your HTML file -->
+
+      <!-- Add this section below the existing section in your HTML file -->
+
+<section>
+  <div class="container mt-2 - pt-2">
+      <div class="row">
+          <div class="col-12 col-sm-8 col-md-6 m-auto">
+              <div class="card border-1 shadow">
+                  <div class="card-body">
+                      <h2 class="display-4 text-center">User Account Management</h2>
+                      <!-- Add a form for user account management -->
+                      <form action="update_user_info.php" method="post">
+                          <label for="newEmail">New Email:</label>
+                          <input type="email" name="newEmail" id="newEmail" class="form-control my-2 py-2" placeholder="New Email" required>
+                          <div class="text-center mt-3">
+                              <div class="d-grid gap-2">
+                                  <button class="btn btn-primary" type="submit" name="updateEmail">Update Email</button>
+                              </div>
+                          </div>
+                          <br>
+                          <label for="newPhoneNumber">New Phone Number:</label>
+                          <input type="tel" name="newPhoneNumber" id="newPhoneNumber" class="form-control my-2 py-2" placeholder="New Phone Number" required>
+                          <div class="text-center mt-3">
+                              <div class="d-grid gap-2">
+                                  <button class="btn btn-primary" type="submit" name="updatePhoneNumber">Update Phone Number</button>
+                              </div>
+                          </div>
+                          <br>
+                          <label for="newPassword">New Password:</label>
+                          <input type="password" name="newPassword" id="newPassword" class="form-control my-2 py-2" placeholder="New Password" required>
+                          <div class="text-center mt-3">
+                              <div class="d-grid gap-2">
+                                  <button class="btn btn-primary" type="submit" name="updatePassword">Update Password</button>
+                              </div>
+                          </div>
+                      </form>
+                      <div class="last-section">
+                          <div class="checkboxcontent">
+                              <div class="custom-input-label">Back to <a href="adminDashboard.html" id="HomeLink">Dashboard</a></div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+
+
+
+    <script src="bootstrap.js"></script>
+</body>
+
+</html>
