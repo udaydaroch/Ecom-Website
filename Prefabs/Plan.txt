@@ -1,0 +1,13 @@
+base plan:
+interface 
+3 photos
+name of the product
+size of the product
+cost of the product
+total number of product
+and the total number at a specific size
+Login and Signup link to MySQL. 
+dashboard 
+  - what they have booked 
+  - what they have already purchased => receipt for things they have purchased (online receipt). 
+  - cancel the current booking.
