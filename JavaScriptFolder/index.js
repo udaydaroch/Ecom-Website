@@ -56,6 +56,10 @@ document.addEventListener("DOMContentLoaded", function () {
         viewButton.className = 'btn btn-outline-success';
         viewButton.type = 'button';
         viewButton.textContent = 'View more';
+        viewButton.addEventListener('click', function () {
+      
+          window.location.href = 'viewmore.html';
+        });
   
         var addToCartButton = document.createElement('button');
         addToCartButton.className = 'btn btn-outline-primary';
