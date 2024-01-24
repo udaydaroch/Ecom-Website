@@ -18,63 +18,54 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sizeXXL = $_POST["sizeXXL"];
     $priceXXL = $_POST["priceXXL"];
 
-    $targetDir = "C:/WebsiteProject/Website-project/Prefabs/";
-    $targetFile = $targetDir . basename($_FILES["clothingImage"]["name"]);
-    $uploadOk = 1;
-    $imageFileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
+    // Generate a unique filename for the image
+    $imageName = uniqid('img_') . '.png';
+    $imageContent = file_get_contents($_FILES["clothingImage"]["tmp_name"]);
+    // Specify the path where the image will be saved
+$imagePath = 'Prefabs/' . $clothingType . '/' . $imageName;
 
-    if (isset($_POST["submit"])) {
-        $check = getimagesize($_FILES["clothingImage"]["tmp_name"]);
-        if ($check === false) {
-            echo "File is not an image.";
-            $uploadOk = 0;
-        }
-    }
+// Create the directory if it doesn't exist
+if (!file_exists('Prefabs/' . $clothingType)) {
+    mkdir('Prefabs/' . $clothingType, 0777, true);
+}
 
-    // Check file size
-    if ($_FILES["clothingImage"]["size"] > 10000000) {
-        echo "Sorry, your file is too large.";
-        $uploadOk = 0;
-    }
+// Save the image to the specified path
+file_put_contents($imagePath, $imageContent);
 
-    // Allow certain file formats
-    $allowedFormats = array("jpg", "jpeg", "png", "gif");
-    if (!in_array($imageFileType, $allowedFormats)) {
-        echo "Sorry, only JPG, JPEG, PNG, GIF files are allowed.";
-        $uploadOk = 0;
-    }
 
-    // Check if $uploadOk is set to 0 by an error
-    if ($uploadOk == 0) {
-        echo "Sorry, your file was not uploaded.";
-    } else {
-        if (move_uploaded_file($_FILES["clothingImage"]["tmp_name"], $targetFile)) {
-            // File uploaded successfully, now insert data into the database
-            $imagePath = $targetFile;
+    // Insert data into the database, including the image name
+    $sql = "INSERT INTO clothing (img, clothing_name, clothing_description, clothing_type, 
+                                    clothing_size_xs, price_size_xs, 
+                                    clothing_size_s, price_size_s, 
+                                    clothing_size_m, price_size_m, 
+                                    clothing_size_l, price_size_l, 
+                                    clothing_size_xl, price_size_xl, 
+                                    clothing_size_xxl, price_size_xxl)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
-            $sql = "INSERT INTO clothing (image, clothing_name, clothing_description, clothing_type, 
-                                            clothing_size_xs, price_size_xs, 
-                                            clothing_size_s, price_size_s, 
-                                            clothing_size_m, price_size_m, 
-                                            clothing_size_l, price_size_l, 
-                                            clothing_size_xl, price_size_xl, 
-                                            clothing_size_xxl, price_size_xxl)
-                    VALUES ('$imagePath', '$clothingName', '$clothingDescription', '$clothingType', 
-                            $sizeXS, $priceXS, 
-                            $sizeS, $priceS, 
-                            $sizeM, $priceM, 
-                            $sizeL, $priceL, 
-                            $sizeXL, $priceXL, 
-                            $sizeXXL, $priceXXL)";
+    $stmt = $conn->prepare($sql);
 
-            if ($conn->query($sql) === TRUE) {
-                echo "New record created successfully";
-            } else {
-                echo "Error: " . $sql . "<br>" . $conn->error;
-            }
+    if ($stmt) {
+        // Bind parameters
+        $stmt->bind_param("ssssssssssssssss", $imagePath, $clothingName, $clothingDescription, $clothingType,
+        $sizeXS, $priceXS,
+        $sizeS, $priceS,
+        $sizeM, $priceM,
+        $sizeL, $priceL,
+        $sizeXL, $priceXL,
+        $sizeXXL, $priceXXL);
+
+        // Execute the statement
+        if ($stmt->execute()) {
+            echo "New record created successfully";
         } else {
-            echo "Sorry, there was an error uploading your file.";
+            echo "Error: " . $stmt->error;
         }
+
+        // Close the statement
+        $stmt->close();
+    } else {
+        echo "Error preparing statement: " . $conn->error;
     }
 
     $conn->close();
