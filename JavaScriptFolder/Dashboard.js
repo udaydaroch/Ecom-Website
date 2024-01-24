@@ -41,9 +41,9 @@ function generateDashboard() {
     var adminData = [
       {
         imgSrc: "/Website-project/Prefabs/shirtLOGO.jpg",
-        title: 'Upload Product',
+        title: 'Product',
         description: 'Click below to upload a new product to the store.',
-        buttonLabel: 'Upload Product',
+        buttonLabel: 'Manage Product',
         buttonClass: 'btn btn-outline-success',
         targetPage: '/Website-project/HTMLFolder/UploadProduct.html'
       },

@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
             cardDiv.className = 'card mb-5 shadow-lg';
 
             var imgElement = document.createElement('img');
-            imgElement.src =data[i].img;
+            imgElement.src = "/Website-project/PHPFolder/" +data[i].img;
             imgElement.className = 'img-fluid';
 
             var cardBodyDiv = document.createElement('div');

@@ -22,11 +22,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $imageName = uniqid('img_') . '.png';
     $imageContent = file_get_contents($_FILES["clothingImage"]["tmp_name"]);
     // Specify the path where the image will be saved
-$imagePath = 'Prefabs/' . $clothingType . '/' . $imageName;
+$imagePath = 'Uploads/' . $clothingType . '/' . $imageName;
 
 // Create the directory if it doesn't exist
-if (!file_exists('Prefabs/' . $clothingType)) {
-    mkdir('Prefabs/' . $clothingType, 0777, true);
+if (!file_exists('Uploads/' . $clothingType)) {
+    mkdir('Uploads/' . $clothingType, 0777, true);
 }
 
 // Save the image to the specified path
