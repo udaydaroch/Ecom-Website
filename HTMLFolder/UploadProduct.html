@@ -6,143 +6,188 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nebular Clothing - Admin Dashboard</title>
   <link rel="stylesheet" href="/Website-project/CSSFolder/bootstrap.css">
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <style>
     .card {
-            width: 70%;
-            padding: auto;
-            margin: auto;
-            align-self: center;
-        }
+      width: 70%;
+      padding: auto;
+      margin: auto;
+      align-self: center;
+    }
 
-      .card-body {
-          align-items: center;
-          justify-content: center;
-      }
-      .card-title {
-        align-items: center;
-        justify-content: center;
-        display: flex;
-      }
+    .card-body {
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card-title {
+      align-items: center;
+      justify-content: center;
+      display: flex;
+    }
   </style>
 
 </head>
 
 <body>
-  <script> 
+  <script>
     fetch('navbar.html')
-            .then(response => response.text())
-            .then(data => {
-                document.body.insertAdjacentHTML('afterbegin', data);
-            });
-    </script>
-<div class="container-fluid">
+      .then(response => response.text())
+      .then(data => {
+        document.body.insertAdjacentHTML('afterbegin', data);
+      });
+      function showForm(formID) {
+  const formClass = formID + 'Form';
+  console.log('Form Class:', formClass); // Log the form class to the console
+  const form = document.querySelector(`.${formClass}`);
+  const formTypes = ["addForm", 'removeForm', 'updateForm'];
+  
+  formTypes.forEach(type => {
+    const currentForm = document.querySelector(`.${type}`);
+    if (currentForm) {
+      currentForm.style.display = type === formClass ? 'block' : 'none';
+    }
+  });
+}
+
+
+
+
+    
+  </script>
+  <div class="container-fluid">
     <div class="row">
-        <div class="d-flex flex-column justify-content-between col-auto bg-dark min-vh-100">
-            <div class="mt-4">
-                <a class="text-white text-decoration-none d-flex align-items-center ms-4">
-                    <span class="fs-2">Orders</span>
-                </a>
-                <hr class="text-white" />
-                <ul class="nav flex-column mt-2 mt-sm-0" id="menu">
-                    <li class="nav-item">
-                        <a href="#" class="nav-link text-white" onclick="">
-                            <i class="fa fa-truck"></i>
-                            <span class="ms-2">Remove Clothing</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link text-white" onclick="">
-                            <i class="fa fa-home"></i>
-                            <span class="ms-2">Update Clothing</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link text-white" onclick="">
-                            <i class="fa fa-question"></i>
-                            <span class="ms-2">Add New Clothing</span>
-                        </a>
-                    </li>
-                </ul>
+      <div class="d-flex flex-column justify-content-between col-auto bg-dark min-vh-100">
+        <div class="mt-4">
+          <a class="text-white text-decoration-none d-flex align-items-center ms-4">
+            <span class="fs-2">Orders</span>
+          </a>
+          <hr class="text-white" />
+          <ul class="nav flex-column mt-2 mt-sm-0" id="menu">
+            <li class="nav-item">
+              <a href="#" class="nav-link text-white" onclick="showForm('remove')">
+                <i class="fa fa-truck"></i>
+                <span class="ms-2">Remove Clothing</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link text-white" onclick="showForm('update')">
+                <i class="fa fa-home"></i>
+                <span class="ms-2">Update Clothing</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link text-white" onclick="showForm('add')">
+                <i class="fa fa-question"></i>
+                <span class="ms-2">Add New Clothing</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="container mt-2 pt-2 addForm" style="display:none;">
+          <div class="card">
+            <div class="card-body">
+              <h2 class="card-title">Add New Clothing</h2>
+              <form id="clothingForm" enctype="multipart/form-data" action="/Website-project/PHPFolder/clothes_upload.php" method="post">
+                <div class="mb-3">
+                    <label for="clothingName" class="form-label">Clothing Name</label>
+                    <input type="text" class="form-control" id="clothingName" name="clothingName" required>
+                </div>
+                <div class="mb-3">
+                    <label for="clothingDescription" class="form-label">Clothing Description</label>
+                    <textarea class="form-control" id="clothingDescription" name="clothingDescription"
+                        rows="3" required></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="clothingType" class="form-label">Clothing Type</label>
+                    <input type="text" class="form-control" id="clothingType" name="clothingType" required>
+                </div>
+                <div class="mb-3">
+                    <label for="clothingImage" class="form-label">Clothing Image</label>
+                    <input type="file" class="form-control" id="clothingImage" name="clothingImage" accept="image/*"
+                        required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Clothing Sizes</label>
+                    <div class="mb-3">
+                        <label for="sizeXS" class="form-label">Extra Small (XS)</label>
+                        <input type="number" class="form-control" id="sizeXS" name="sizeXS" min="0" value="0">
+                        <!-- Add price field for XS -->
+                        <label for="priceXS" class="form-label">Price for XS</label>
+                        <input type="number" class="form-control" id="priceXS" name="priceXS" min="0" value="0" step="0.01" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="sizeS" class="form-label">Small (S)</label>
+                        <input type="number" class="form-control" id="sizeS" name="sizeS" min="0" value="0">
+                        <!-- Add price field for S -->
+                        <label for="priceS" class="form-label">Price for S</label>
+                        <input type="number" class="form-control" id="priceS" name="priceS" min="0" value="0" step="0.01" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="sizeM" class="form-label">Medium (M)</label>
+                        <input type="number" class="form-control" id="sizeM" name="sizeM" min="0" value="0">
+                        <!-- Add price field for M -->
+                        <label for="priceM" class="form-label">Price for M</label>
+                        <input type="number" class="form-control" id="priceM" name="priceM" min="0" value="0" step="0.01" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="sizeL" class="form-label">Large (L)</label>
+                        <input type="number" class="form-control" id="sizeL" name="sizeL" min="0" value="0">
+                        <!-- Add price field for L -->
+                        <label for="priceL" class="form-label">Price for L</label>
+                        <input type="number" class="form-control" id="priceL" name="priceL" min="0" value="0" step="0.01" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="sizeXL" class="form-label">Extra Large (XL)</label>
+                        <input type="number" class="form-control" id="sizeXL" name="sizeXL" min="0" value="0">
+                        <!-- Add price field for XL -->
+                        <label for="priceXL" class="form-label">Price for XL</label>
+                        <input type="number" class="form-control" id="priceXL" name="priceXL" min="0" value="0" step="0.01" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="sizeXXL" class="form-label">Extra Extra Large (XXL)</label>
+                        <input type="number" class="form-control" id="sizeXXL" name="sizeXXL" min="0" value="0">
+                        <!-- Add price field for XXL -->
+                        <label for="priceXXL" class="form-label">Price for XXL</label>
+                        <input type="number" class="form-control" id="priceXXL" name="priceXXL" min="0" value="0" step="0.01" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
             </div>
+          </div>
         </div>
 
-        <div class="col">
-            <div class="container mt-2 pt-2">
-                <div class="card">
-                    <div class="card-body">
-                      <h2 class="card-title">Add New Clothing</h2>
-                      <form id="clothingForm" enctype="multipart/form-data" action="/Website-project/PHPFolder/clothes_upload.php" method="post">
-                          <div class="mb-3">
-                              <label for="clothingName" class="form-label">Clothing Name</label>
-                              <input type="text" class="form-control" id="clothingName" name="clothingName" required>
-                          </div>
-                          <div class="mb-3">
-                              <label for="clothingDescription" class="form-label">Clothing Description</label>
-                              <textarea class="form-control" id="clothingDescription" name="clothingDescription"
-                                  rows="3" required></textarea>
-                          </div>
-                          <div class="mb-3">
-                              <label for="clothingType" class="form-label">Clothing Type</label>
-                              <input type="text" class="form-control" id="clothingType" name="clothingType" required>
-                          </div>
-                          <div class="mb-3">
-                              <label for="clothingImage" class="form-label">Clothing Image</label>
-                              <input type="file" class="form-control" id="clothingImage" name="clothingImage" accept="image/*"
-                                  required>
-                          </div>
-                          <div class="mb-3">
-                              <label class="form-label">Clothing Sizes</label>
-                              <div class="mb-3">
-                                  <label for="sizeXS" class="form-label">Extra Small (XS)</label>
-                                  <input type="number" class="form-control" id="sizeXS" name="sizeXS" min="0" value="0">
-                                  <!-- Add price field for XS -->
-                                  <label for="priceXS" class="form-label">Price for XS</label>
-                                  <input type="number" class="form-control" id="priceXS" name="priceXS" min="0" value="0" step="0.01" required>
-                              </div>
-                              <div class="mb-3">
-                                  <label for="sizeS" class="form-label">Small (S)</label>
-                                  <input type="number" class="form-control" id="sizeS" name="sizeS" min="0" value="0">
-                                  <!-- Add price field for S -->
-                                  <label for="priceS" class="form-label">Price for S</label>
-                                  <input type="number" class="form-control" id="priceS" name="priceS" min="0" value="0" step="0.01" required>
-                              </div>
-                              <div class="mb-3">
-                                  <label for="sizeM" class="form-label">Medium (M)</label>
-                                  <input type="number" class="form-control" id="sizeM" name="sizeM" min="0" value="0">
-                                  <!-- Add price field for M -->
-                                  <label for="priceM" class="form-label">Price for M</label>
-                                  <input type="number" class="form-control" id="priceM" name="priceM" min="0" value="0" step="0.01" required>
-                              </div>
-                              <div class="mb-3">
-                                  <label for="sizeL" class="form-label">Large (L)</label>
-                                  <input type="number" class="form-control" id="sizeL" name="sizeL" min="0" value="0">
-                                  <!-- Add price field for L -->
-                                  <label for="priceL" class="form-label">Price for L</label>
-                                  <input type="number" class="form-control" id="priceL" name="priceL" min="0" value="0" step="0.01" required>
-                              </div>
-                              <div class="mb-3">
-                                  <label for="sizeXL" class="form-label">Extra Large (XL)</label>
-                                  <input type="number" class="form-control" id="sizeXL" name="sizeXL" min="0" value="0">
-                                  <!-- Add price field for XL -->
-                                  <label for="priceXL" class="form-label">Price for XL</label>
-                                  <input type="number" class="form-control" id="priceXL" name="priceXL" min="0" value="0" step="0.01" required>
-                              </div>
-                              <div class="mb-3">
-                                  <label for="sizeXXL" class="form-label">Extra Extra Large (XXL)</label>
-                                  <input type="number" class="form-control" id="sizeXXL" name="sizeXXL" min="0" value="0">
-                                  <!-- Add price field for XXL -->
-                                  <label for="priceXXL" class="form-label">Price for XXL</label>
-                                  <input type="number" class="form-control" id="priceXXL" name="priceXXL" min="0" value="0" step="0.01" required>
-                              </div>
-                          </div>
-                          <button type="submit" class="btn btn-primary">Submit</button>
-                      </form>
-                </div>
+        <div class="container mt-2 pt-2 removeForm" style="display:none;">
+          <div class="card">
+            <div class="card-body">
+              <h2 class="card-title">Remove Clothing</h2>
+              <form class="clothingForm" enctype="multipart/form-data" action="/Website-project/PHPFolder/clothes_upload.php" method="post">
+                <!-- Form content remains the same -->
+              </form>
             </div>
+          </div>
         </div>
+
+        <div class="container mt-2 pt-2 updateForm" style="display:none;">
+          <div class="card">
+            <div class="card-body">
+              <h2 class="card-title">Update Clothing</h2>
+              <form class="clothingForm" enctype="multipart/form-data" action="/Website-project/PHPFolder/clothes_upload.php" method="post">
+                <!-- Form content remains the same -->
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"></script>
+
 </body>
 
 </html>
