@@ -1,7 +1,7 @@
 <?php
 
 require_once('connection.php');
-$sql = "SELECT id, img, clothing_name, clothing_description, clothing_type FROM clothing";
+$sql = "SELECT id, img, clothing_name, clothing_description, clothing_type,isAvailable FROM clothing";
 $result = $conn->query($sql);
 
 if (!$result) {

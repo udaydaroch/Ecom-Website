@@ -132,7 +132,7 @@
           <div class="card">
             <div class="card-body">
               <h2 class="card-title">Add New Clothing</h2>
-              <form id="clothingForm" enctype="multipart/form-data" action="/Website-project/PHPFolder/update_clothing.php" method="post">
+              <form id="clothingForm" enctype="multipart/form-data" action="/Website-project/PHPFolder/clothes_upload.php" method="post">
                 <div class="mb-3">
                     <label for="clothingName" class="form-label">Clothing Name</label>
                     <input type="text" class="form-control" id="clothingName" name="clothingName" required>
@@ -151,6 +151,14 @@
                     <input type="file" class="form-control" id="clothingImage" name="clothingImage" accept="image/*"
                         required>
                 </div>
+                <div class="mb-3">
+                    <label class="form-label">Product Availability</label>
+                    <select class="form-select" id="isAvailable" name="isAvailable" required>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+
                 <div class="mb-3">
                     <label class="form-label">Clothing Sizes</label>
                     <div class="mb-3">
@@ -225,64 +233,71 @@
                   </div>
                   <div class="mb-3">
                     <label for="clothingName" class="form-label">Clothing Name</label>
-                    <input type="text" class="form-control" id="updateclothingName" name="clothingName" required>
+                    <input type="text" class="form-control" id="updateclothingName" name="updateclothingName" required>
                   </div>
                   <div class="mb-3">
                     <label for="clothingDescription" class="form-label">Clothing Description</label>
-                    <textarea class="form-control" id="updateclothingDescription" name="clothingDescription" rows="3" required></textarea>
+                    <textarea class="form-control" id="updateclothingDescription" name="updateclothingDescription" rows="3" required></textarea>
                   </div>
                   <div class="mb-3">
                     <label for="clothingType" class="form-label">Clothing Type</label>
-                    <input type="text" class="form-control" id="updateclothingType" name="clothingType" required>
+                    <input type="text" class="form-control" id="updateclothingType" name="updateclothingType" required>
                   </div>
                   <div class="mb-3">
                     <label for="clothingImage" class="form-label">Clothing Image</label>
-                    <input type="file" class="form-control" id="updateclothingImage" name="clothingImage" accept="image/*" required>
+                    <input type="file" class="form-control" id="updateclothingImage" name="updateclothingImage" accept="image/*" required>
                   </div>
-
+                <div class="mb-3">
+                <label class="form-label">Product Availability</label>
+                <select class="form-select" id="updateisAvailable" name="updateisAvailable" required>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+                </div>
+             
                   <div class="mb-3">
                     <label class="form-label">Clothing Sizes</label>
                     <div class="mb-3">
                         <label for="sizeXS" class="form-label">Extra Small (XS)</label>
-                        <input type="number" class="form-control" id="updatesizeXS" name="sizeXS" min="0" value="0">
+                        <input type="number" class="form-control" id="updatesizeXS" name="updatesizeXS" min="0" value="0">
                         <!-- Add price field for XS -->
                         <label for="priceXS" class="form-label">Price for XS</label>
-                        <input type="number" class="form-control" id="updatepriceXS" name="priceXS" min="0" value="0" step="0.01" required>
+                        <input type="number" class="form-control" id="updatepriceXS" name="updatepriceXS" min="0" value="0" step="0.01" required>
                     </div>
                     <div class="mb-3">
                         <label for="sizeS" class="form-label">Small (S)</label>
-                        <input type="number" class="form-control" id="updatesizeS" name="sizeS" min="0" value="0">
+                        <input type="number" class="form-control" id="updatesizeS" name="updatesizeS" min="0" value="0">
                         <!-- Add price field for S -->
                         <label for="priceS" class="form-label">Price for S</label>
-                        <input type="number" class="form-control" id="updatepriceS" name="priceS" min="0" value="0" step="0.01" required>
+                        <input type="number" class="form-control" id="updatepriceS" name="updatepriceS" min="0" value="0" step="0.01" required>
                     </div>
                     <div class="mb-3">
                         <label for="sizeM" class="form-label">Medium (M)</label>
-                        <input type="number" class="form-control" id="updatesizeM" name="sizeM" min="0" value="0">
+                        <input type="number" class="form-control" id="updatesizeM" name="updatesizeM" min="0" value="0">
                         <!-- Add price field for M -->
                         <label for="priceM" class="form-label">Price for M</label>
-                        <input type="number" class="form-control" id="updatepriceM" name="priceM" min="0" value="0" step="0.01" required>
+                        <input type="number" class="form-control" id="updatepriceM" name="updatepriceM" min="0" value="0" step="0.01" required>
                     </div>
                     <div class="mb-3">
                         <label for="sizeL" class="form-label">Large (L)</label>
-                        <input type="number" class="form-control" id="updatesizeL" name="sizeL" min="0" value="0">
+                        <input type="number" class="form-control" id="updatesizeL" name="updatesizeL" min="0" value="0">
                         <!-- Add price field for L -->
                         <label for="priceL" class="form-label">Price for L</label>
-                        <input type="number" class="form-control" id="updatepriceL" name="priceL" min="0" value="0" step="0.01" required>
+                        <input type="number" class="form-control" id="updatepriceL" name="updatepriceL" min="0" value="0" step="0.01" required>
                     </div>
                     <div class="mb-3">
                         <label for="sizeXL" class="form-label">Extra Large (XL)</label>
-                        <input type="number" class="form-control" id="updatesizeXL" name="sizeXL" min="0" value="0">
+                        <input type="number" class="form-control" id="updatesizeXL" name="updatesizeXL" min="0" value="0">
                         <!-- Add price field for XL -->
                         <label for="priceXL" class="form-label">Price for XL</label>
-                        <input type="number" class="form-control" id="updatepriceXL" name="priceXL" min="0" value="0" step="0.01" required>
+                        <input type="number" class="form-control" id="updatepriceXL" name="updatepriceXL" min="0" value="0" step="0.01" required>
                     </div>
                     <div class="mb-3">
                         <label for="sizeXXL" class="form-label">Extra Extra Large (XXL)</label>
-                        <input type="number" class="form-control" id="updatesizeXXL" name="sizeXXL" min="0" value="0">
+                        <input type="number" class="form-control" id="updatesizeXXL" name="updatesizeXXL" min="0" value="0">
                         <!-- Add price field for XXL -->
                         <label for="priceXXL" class="form-label">Price for XXL</label>
-                        <input type="number" class="form-control" id="updatepriceXXL" name="priceXXL" min="0" value="0" step="0.01" required>
+                        <input type="number" class="form-control" id="updatepriceXXL" name="updatepriceXXL" min="0" value="0" step="0.01" required>
                     </div>
                   </div>
                   <button type="submit" id="updateButton" class="btn btn-primary">Update</button>
