@@ -5,7 +5,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Retrieve form data
     $clothingName = $_POST["clothingName"];
     $clothingDescription = $_POST["clothingDescription"];
-    $clothingType = $_POST["clothingType"];
+    $clothingType = $_POST["clothingType"]; // Updated variable name
     $isAvailable = $_POST["isAvailable"]; 
     $sizeXS = $_POST["sizeXS"];
     $priceXS = $_POST["priceXS"];
@@ -19,7 +19,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $priceXL = $_POST["priceXL"];
     $sizeXXL = $_POST["sizeXXL"];
     $priceXXL = $_POST["priceXXL"];
-   
+
+    
 
     // Generate a unique filename for the image
     $imageName = uniqid('img_') . '.png';

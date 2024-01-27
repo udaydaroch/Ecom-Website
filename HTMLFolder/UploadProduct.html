@@ -7,101 +7,17 @@
   <title>Nebular Clothing - Admin Dashboard</title>
   <link rel="stylesheet" href="/Website-project/CSSFolder/bootstrap.css">
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-  <style>
-    .card {
-      width: 70%;
-      padding: auto;
-      margin: auto;
-      align-self: center;
-    }
-
-    .card-body {
-      align-items: center;
-      justify-content: center;
-    }
-
-    .card-title {
-      align-items: center;
-      justify-content: center;
-      display: flex;
-    }
-  </style>
+  <link rel="stylesheet" href="/Website-project/CSSFolder/UploadProduct.css"> </link>
 
 </head>
 
 <body>
-  <script>
-    function autofillUpdateForm(productId) {
-        alert(productId);
-  fetch(`/Website-project/PHPFolder/get_product_details.php?id=${productId}`)
-    .then(response => response.json() )
-    .then(data => {
-        alert(data);
-        // Populate form fields with retrieved data
-      document.getElementById('updateclothingName').value = data.clothing_name;
-      document.getElementById('updateclothingDescription').value = data.clothing_description;
-      document.getElementById('updateclothingType').value = data.clothing_type;
-      
-
-      // Populate sizes and prices
-      document.getElementById('updatesizeXS').value = data.clothing_size_xs;
-      document.getElementById('updatepriceXS').value = data.price_size_xs;
-
-      document.getElementById('updatesizeS').value = data.clothing_size_s;
-      document.getElementById('updatepriceS').value = data.price_size_s;
-
-      document.getElementById('updatesizeM').value = data.clothing_size_m;
-      document.getElementById('updatepriceM').value = data.price_size_m;
-
-      document.getElementById('updatesizeL').value = data.clothing_size_l;
-      document.getElementById('updatepriceL').value = data.price_size_l;
-
-      document.getElementById('updatesizeXL').value = data.clothing_size_xl;
-      document.getElementById('updatepriceXL').value = data.price_size_xl;
-
-      document.getElementById('updatesizeXXL').value = data.clothing_size_xxl;
-      document.getElementById('updatepriceXXL').value = data.price_size_xxl;
-    alert(data.price_size_xxl);
-    })
-    .catch(error => {
-      console.error('Error fetching product details:', error);
-    });
-    
-}
-
-
-
-    fetch('navbar.html')
-      .then(response => response.text())
-      .then(data => {
-        document.body.insertAdjacentHTML('afterbegin', data);
-      });
-      function showForm(formID) {
-            const formClass = formID + 'Form';
-            console.log('Form Class:', formClass); // Log the form class to the console
-            const form = document.querySelector(`.${formClass}`);
-            const formTypes = ["addForm", 'removeForm', 'updateForm'];
-            
-            formTypes.forEach(type => {
-                const currentForm = document.querySelector(`.${type}`);
-                if (currentForm) {
-                currentForm.style.display = type === formClass ? 'block' : 'none';
-                }
-         });
-
-        }
-
-
-
-
-    
-  </script>
   <div class="container-fluid">
     <div class="row">
       <div class="d-flex flex-column justify-content-between col-auto bg-dark min-vh-100">
         <div class="mt-4">
           <a class="text-white text-decoration-none d-flex align-items-center ms-4">
-            <span class="fs-2">Orders</span>
+            <span class="fs-2">Manage Clothing</span>
           </a>
           <hr class="text-white" />
           <ul class="nav flex-column mt-2 mt-sm-0" id="menu">
@@ -143,13 +59,19 @@
                         rows="3" required></textarea>
                 </div>
                 <div class="mb-3">
-                    <label for="clothingType" class="form-label">Clothing Type</label>
-                    <input type="text" class="form-control" id="clothingType" name="clothingType" required>
-                </div>
+                  <label for="clothingType" class="form-label">Clothing Type</label>
+                  <select class="form-select" id="clothingType" name="clothingType" required>
+
+                      <option value="shirts">shirts</option>
+                      <option value="packets">jackets</option>
+                      <option value="pants">pants</option>
+                      <option value="other">other</option>
+                  </select>
+              </div>
+              
                 <div class="mb-3">
                     <label for="clothingImage" class="form-label">Clothing Image</label>
-                    <input type="file" class="form-control" id="clothingImage" name="clothingImage" accept="image/*"
-                        required>
+                    <input type="file" class="form-control" id="clothingImage" name="clothingImage" accept="image/*">
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Product Availability</label>
@@ -185,7 +107,7 @@
                     <div class="mb-3">
                         <label for="sizeL" class="form-label">Large (L)</label>
                         <input type="number" class="form-control" id="sizeL" name="sizeL" min="0" value="0">
-                        <!-- Add price field for L -->
+                        
                         <label for="priceL" class="form-label">Price for L</label>
                         <input type="number" class="form-control" id="priceL" name="priceL" min="0" value="0" step="0.01" required>
                     </div>
@@ -214,8 +136,18 @@
           <div class="card">
             <div class="card-body">
               <h2 class="card-title">Remove Clothing</h2>
-              <form class="clothingForm" enctype="multipart/form-data" action="/Website-project/PHPFolder/clothes_upload.php" method="post">
-                <!-- Form content remains the same -->
+              <form id="removeClothingForm" action="/Website-project/PHPFolder/remove_clothing.php" method="post">
+                <div class="mb-3">
+                  <label for="productIdToRemove" class="form-label">Product ID</label>
+                  <input type="text" class="form-control" id="productIdToRemove" name="productIdToRemove" required>
+                </div>
+                <button type="submit" class="btn btn-danger">Remove Permanently</button>
+                <p class="text-danger mt-2">This action cannot be undone. if you would like to just 
+                  make this product unavaiable( not visible to customer but still in the system). 
+                  just change its Availability below.
+                </p>
+                <label for="productMadeUnavailable" class="form-label">Make the product unavaiable?</label>
+                <button type="button" class="btn btn-primary">Yes</button>
               </form>
             </div>
           </div>
@@ -240,13 +172,24 @@
                     <textarea class="form-control" id="updateclothingDescription" name="updateclothingDescription" rows="3" required></textarea>
                   </div>
                   <div class="mb-3">
-                    <label for="clothingType" class="form-label">Clothing Type</label>
-                    <input type="text" class="form-control" id="updateclothingType" name="updateclothingType" required>
-                  </div>
+                    <label for="updateclothingType" class="form-label">Clothing Type</label>
+                    <select class="form-select" id="updateclothingType" name="updateclothingType" required>
+                      <option value="shirts">shirts</option>
+                      <option value="jackets">jackets</option>
+                      <option value="pants">pants</option>
+                      <option value="other">other</option>
+                    </select>
+                </div>
+
+                  <img id="currentimage"></img>
                   <div class="mb-3">
-                    <label for="clothingImage" class="form-label">Clothing Image</label>
+                    <label for="updateKeepImage" class="form-check-label">Keep existing image</label>
+                    <input type="checkbox" class="form-check-input" id="updateKeepImage" onchange="toggleImageUpload()">
+                </div>
+                <div class="mb-3" id="updateImageUploadContainer">
+                    <label for="updateclothingImage" class="form-label">Clothing Image</label>
                     <input type="file" class="form-control" id="updateclothingImage" name="updateclothingImage" accept="image/*" required>
-                  </div>
+                </div>
                 <div class="mb-3">
                 <label class="form-label">Product Availability</label>
                 <select class="form-select" id="updateisAvailable" name="updateisAvailable" required>
@@ -312,7 +255,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"></script>
-
-</body>
+    <script src="/Website-project/JavaScriptFolder/manageProduct.js";></script>
+  </body>
 
 </html>
