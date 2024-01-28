@@ -136,19 +136,17 @@
           <div class="card">
             <div class="card-body">
               <h2 class="card-title">Remove Clothing</h2>
-              <form id="removeClothingForm" action="/Website-project/PHPFolder/remove_clothing.php" method="post">
+              <form id="removeClothingForm" action="/Website-project/PHPFolder/delete_product.php" method="post">
                 <div class="mb-3">
-                  <label for="productIdToRemove" class="form-label">Product ID</label>
-                  <input type="text" class="form-control" id="productIdToRemove" name="productIdToRemove" required>
+                    <label for="productIdToRemove" class="form-label">Product ID</label>
+                    <input type="text" class="form-control" id="productIdToRemove" name="productIdToRemove" required>
                 </div>
-                <button type="submit" class="btn btn-danger">Remove Permanently</button>
-                <p class="text-danger mt-2">This action cannot be undone. if you would like to just 
-                  make this product unavaiable( not visible to customer but still in the system). 
-                  just change its Availability below.
-                </p>
-                <label for="productMadeUnavailable" class="form-label">Make the product unavaiable?</label>
-                <button type="button" class="btn btn-primary">Yes</button>
-              </form>
+                <button type="submit" class="btn btn-danger" name="deletePermanently">Remove Permanently</button>
+                <p class="text-danger mt-2">This action cannot be undone. If you would like to just make this product unavailable (not visible to customers but still in the system), just change its availability below.</p>
+                <input type="hidden" name="makeUnavailable" value="true">
+                <button type="submit" class="btn btn-primary">Make Unavailable</button>
+            </form>
+            
             </div>
           </div>
         </div>

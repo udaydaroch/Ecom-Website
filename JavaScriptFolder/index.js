@@ -7,9 +7,9 @@ document.addEventListener("DOMContentLoaded", function () {
             if (data[i].isAvailable == 'yes') {
                 var colDiv = document.createElement('div');
                 colDiv.className = 'col-lg-4 col-md-6 col-sm-12';
-
+                colDiv.style.marginTop = '20px';
                 var cardDiv = document.createElement('div');
-                cardDiv.className = 'card mb-5 shadow-lg';
+                cardDiv.className = 'card mb-0 shadow-lg';
 
                 var imgElement = document.createElement('img');
                 imgElement.src = "/Website-project/PHPFolder/" + data[i].img;
@@ -38,18 +38,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 viewButton.type = 'button';
                 viewButton.textContent = 'View more';
                 viewButton.addEventListener('click', function () {
-                    window.location.href = 'viewmore.html';
+                    window.location.href = 'viewmore.html?id='+data[i].id;
                 });
 
-                var addToCartButton = document.createElement('button');
-                addToCartButton.className = 'btn btn-outline-primary';
-                addToCartButton.type = 'button';
-                addToCartButton.textContent = 'Add to Cart';
+               
 
                 cardTitleDiv.appendChild(h2Element);
                 cardTextDiv.appendChild(pElement);
                 buttonDiv.appendChild(viewButton);
-                buttonDiv.appendChild(addToCartButton);
                 cardBodyDiv.appendChild(cardTitleDiv);
                 cardBodyDiv.appendChild(cardTextDiv);
                 cardBodyDiv.appendChild(buttonDiv);
@@ -70,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
         clearCardContainer();
 
         // Fetch data from the server
-        fetch('/Website-project/PHPFolder/get_product.php')
+        fetch('/Website-project/PHPFolder/get_products.php')
             .then(response => response.json())
             .then(data => generateCard(data))
             .catch(error => console.error('Error fetching products:', error));
