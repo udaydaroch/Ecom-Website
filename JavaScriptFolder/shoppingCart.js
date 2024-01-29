@@ -1,3 +1,16 @@
+function updateTotalAmount() {
+  let totalAmount = 0;
+  const rows = document.querySelectorAll('#shoppingCartBody .row');
+  rows.forEach(row => {
+      const totalPriceCell = row.querySelector('.col:last-of-type');
+      const totalPrice = parseFloat(totalPriceCell.textContent.slice(1));
+      totalAmount += totalPrice;
+  });
+
+  // Update the total amount element
+  const totalAmountElement = document.querySelector('.Total-Amount');
+  totalAmountElement.textContent = `Total Amount: $${totalAmount.toFixed(2)}`;
+}
 
 function addProductToCart() {
   let existingData = localStorage.getItem("myData");
@@ -38,6 +51,7 @@ function addProductToCart() {
       decrementBtn.addEventListener('click', () => decrementQuantity(newRow));
       
     });
+    updateTotalAmount();
 }
 
 
@@ -59,7 +73,7 @@ function removeProductFromCart(index) {
   let products = existingData ? JSON.parse(existingData) : [];
   products.splice(index, 1);
   localStorage.setItem("myData", JSON.stringify(products));
- 
+  updateTotalAmount();
 }
 
 function decrementQuantity(row) {
@@ -81,7 +95,7 @@ function decrementQuantity(row) {
       // Remove the corresponding product from local storage
       removeProductFromCart(rowIndex);
   }
-  
+  updateTotalAmount();
 }
 
 
@@ -92,5 +106,6 @@ function updateTotalPrice(row) {
     const quantity = parseInt(quantityInput.value);
     const totalPrice = pricePerItem * quantity;
     row.querySelector('.col:last-of-type').textContent = "$"+totalPrice.toFixed(2);
+    updateTotalAmount();
 }
 
