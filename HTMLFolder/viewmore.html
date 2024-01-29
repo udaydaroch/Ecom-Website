@@ -16,7 +16,7 @@
 
         .big-image-container img {
             position: relative;
-            max-width: 70%;
+            max-width: 100%;
             height: auto;
         }
 
@@ -56,6 +56,21 @@
             font-size: 16px;
             margin-bottom: 8px;
         }
+
+        .product-info table {
+            width: 100%;
+        }
+
+        .product-info th,
+        .product-info td {
+            border: 1px solid #dee2e6;
+            padding: 8px;
+            text-align: center;
+        }
+
+        .product-info th {
+            background-color: #f8f9fa;
+        }
     </style>
 </head>
 
@@ -86,26 +101,36 @@
                 <div class="product-info">
                     <h3>Product Name</h3>
                     <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    <p>Available Sizes: S, M, L, XL</p>
-                    <p>Price per Size:</p>
-                    <ul>
-                        <li>Size S: $25.99</li>
-                        <li>Size M: $25.99</li>
-                        <li>Size L: $25.99</li>
-                        <li>Size XL: $25.99</li>
-                    </ul>
-                    <p>Number of Products Available in Each Size:</p>
-                    <ul>
-                        <li>Size S: 50</li>
-                        <li>Size M: 30</li>
-                        <li>Size L: 20</li>
-                        <li>Size XL: 10</li>
-                    </ul>
+                    <table>
+                        <tr>
+                            <th>Size</th>
+                            <th>Price</th>
+                            <th>Number of Products</th>
+                        </tr>
+                        <tbody id="sizePriceTable">
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="card mt-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Select Size</h5>
+                        <select class="form-select mb-3" aria-label="Select Size">
+                        </select>
+                        <br>
+                        <h5 class="add-size">quantity</h5>
+                        <input id ="quantity" type="number" name="quantity" class="form-control my-2 py-2" placeholder="1" value ="1">
+                        <br> 
+                        <div class="d-grid gap-2 col-6 mx-auto">
+                            <button id="addToCartBtn" class="btn btn-primary" type="button">Add to cart</button>
+                          </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
+    <script src="/Website-project/JavaScriptFolder/shoppingCart.js"></script>
     <script src="/Website-project/JavaScriptFolder/viewmore.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
