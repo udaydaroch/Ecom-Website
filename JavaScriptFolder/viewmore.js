@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (existingProductIndex !== -1) {
                     // Product already exists, update quantity and total price
                     products[existingProductIndex].quantity += quantity;
-                    products[existingProductIndex].price += pricePerItem * quantity;
+                    products[existingProductIndex].price = pricePerItem ;
                 } else {
                     // Product doesn't exist, add new entry
                     selectedProduct = {
