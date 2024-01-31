@@ -1,4 +1,3 @@
-// dashboard.js
 
 function loadDeliveryOrders() {
   clearSections();
