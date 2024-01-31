@@ -7,7 +7,8 @@
     <title>Nebular Clothing</title>
     <link rel="stylesheet" href="/Website-project/CSSFolder/bootstrap.css">
     <link rel="stylesheet" href="/Website-project/CSSFolder/Login.css">
-</head>
+    <script src="/Website-project/JavaScriptFolder/cartBadge.js"></script>
+  </head>
 
 <body> 
   <script> 
@@ -15,6 +16,7 @@
             .then(response => response.text())
             .then(data => {
                 document.body.insertAdjacentHTML('afterbegin', data);
+                updateBadge();
             });
     </script>
 

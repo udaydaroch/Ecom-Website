@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nebular Clothing</title>
     <link rel="stylesheet" href="/Website-project/CSSFolder/bootstrap.css">
+    <script src="/Website-project/JavaScriptFolder/cartBadge.js"></script>
     <style >
         .col > .btn {
     display: inline-block;
@@ -25,12 +26,16 @@
     </style>
 </head>
 
-<body onload="addProductToCart()">
+<body>
     <script> 
         fetch('navbar.html')
                 .then(response => response.text())
                 .then(data => {
                     document.body.insertAdjacentHTML('afterbegin', data);
+                    updateBadge();
+                    
+                    addProductToCart();
+
                 });
         </script>
   

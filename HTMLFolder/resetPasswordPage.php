@@ -5,15 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nebular Clothing</title>
+    <script src="/Website-project/JavaScriptFolder/cartBadge.js"></script>
     <link rel="stylesheet" href="/Website-project/CSSFolder/bootstrap.css">
 </head>
 
 <body>
-    <script>
-        fetch('navbar.html')
+
+<script> 
+    fetch('navbar.html')
             .then(response => response.text())
             .then(data => {
                 document.body.insertAdjacentHTML('afterbegin', data);
+                updateBadge();
             });
     </script>
     <br>

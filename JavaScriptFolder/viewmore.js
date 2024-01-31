@@ -104,8 +104,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 break;
             } 
         }
+        updateBadge();
     });
-    
 });
 
 function updateSelectOptions() {

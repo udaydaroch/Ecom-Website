@@ -1,3 +1,4 @@
+
 function updateTotalAmount() {
   let totalAmount = 0;
   const rows = document.querySelectorAll('#shoppingCartBody .row');
@@ -7,9 +8,9 @@ function updateTotalAmount() {
       totalAmount += totalPrice;
   });
 
-  // Update the total amount element
   const totalAmountElement = document.querySelector('.Total-Amount');
   totalAmountElement.textContent = `Total Amount: $${totalAmount.toFixed(2)}`;
+  updateBadge();
 }
 
 function addProductToCart() {
@@ -52,11 +53,9 @@ function addProductToCart() {
       
     });
     updateTotalAmount();
+    updateBadge();
 }
 
-
-
-// Function to increment the quantity of a product
 function incrementQuantity(row) {
     const quantityInput = row.querySelector('.quantity-input');
     let quantity = parseInt(quantityInput.value);
@@ -65,8 +64,52 @@ function incrementQuantity(row) {
 
     // Update the total price
     updateTotalPrice(row);
-   
+
+    // Update the quantity in localStorage
+    const productName = row.querySelector('.col:first-of-type').textContent;
+    const productSize = row.querySelector('.col:nth-of-type(2)').textContent;
+    let existingData = localStorage.getItem("myData");
+    let products = existingData ? JSON.parse(existingData) : [];
+    const existingProductIndex = products.findIndex(product => product.name === productName && product.size === productSize);
+    if (existingProductIndex !== -1) {
+        products[existingProductIndex].quantity = quantity;
+        localStorage.setItem("myData", JSON.stringify(products)); // Use localStorage here
+    }
+    updateBadge();
+
 }
+
+function decrementQuantity(row) {
+    const quantityInput = row.querySelector('.quantity-input');
+    let quantity = parseInt(quantityInput.value);
+    if (quantity > 1) {
+        quantity--;
+        quantityInput.value = quantity;
+
+        // Update the total price
+        updateTotalPrice(row);
+
+        // Update the quantity in localStorage
+        const productName = row.querySelector('.col:first-of-type').textContent;
+        const productSize = row.querySelector('.col:nth-of-type(2)').textContent;
+        let existingData = localStorage.getItem("myData");
+        let products = existingData ? JSON.parse(existingData) : [];
+        const existingProductIndex = products.findIndex(product => product.name === productName && product.size === productSize);
+        if (existingProductIndex !== -1) {
+            products[existingProductIndex].quantity = quantity;
+            localStorage.setItem("myData", JSON.stringify(products)); // Use localStorage here
+        }
+    } else {
+        // If quantity becomes 0, remove the product row
+        const rowIndex = Array.from(row.parentNode.children).indexOf(row);
+        row.remove();
+        // Remove the corresponding product from local storage
+        removeProductFromCart(rowIndex);
+    }
+    updateTotalAmount();
+    updateBadge();
+}
+
 
 function removeProductFromCart(index) {
   let existingData = localStorage.getItem("myData");
@@ -74,29 +117,9 @@ function removeProductFromCart(index) {
   products.splice(index, 1);
   localStorage.setItem("myData", JSON.stringify(products));
   updateTotalAmount();
+  updateBadge();
 }
 
-function decrementQuantity(row) {
-  const quantityInput = row.querySelector('.quantity-input');
-  let quantity = parseInt(quantityInput.value);
-  if (quantity > 1) {
-      quantity --;
-      quantityInput.value = quantity;
-
-      // Update the total price
-      updateTotalPrice(row);
-      
-  } else {
-      // If quantity becomes 0, remove the product row
-      const rowIndex = Array.from(row.parentNode.children).indexOf(row);
-      row.remove();
-      
-      
-      // Remove the corresponding product from local storage
-      removeProductFromCart(rowIndex);
-  }
-  updateTotalAmount();
-}
 
 
 function updateTotalPrice(row) {
@@ -107,5 +130,6 @@ function updateTotalPrice(row) {
     const totalPrice = pricePerItem * quantity;
     row.querySelector('.col:last-of-type').textContent = "$"+totalPrice.toFixed(2);
     updateTotalAmount();
+    updateBadge();
 }
 

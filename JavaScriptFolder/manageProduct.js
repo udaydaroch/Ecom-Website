@@ -37,11 +37,7 @@ function autofillUpdateForm(productId) {
 
 
 
-fetch('navbar.html')
-.then(response => response.text())
-.then(data => {
-    document.body.insertAdjacentHTML('afterbegin', data);
-});
+
 
 function showForm(formID) {
       const formClass = formID + 'Form';
