@@ -4,7 +4,6 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-// Load Composer's autoloader
 require 'C:\xampp\htdocs\WebsiteProject\Website-project\vendor\autoload.php';
 
 function send_password_reset($get_name, $get_email, $token) {
@@ -14,9 +13,9 @@ function send_password_reset($get_name, $get_email, $token) {
     $mail->SMTPAuth = true;
     $mail->Host = 'smtp.gmail.com';
     $mail->Username = 'UdayDaroch@gmail.com';
-    $mail->Password = 'mlpgquhwcdjlhkpx';  // Replace with your actual SMTP password
+    $mail->Password = 'mlpgquhwcdjlhkpx';  
 
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; // or PHPMailer::ENCRYPTION_SMTPS
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; 
     $mail->Port = 587; // or 465
 
     $mail->setFrom('UdayDaroch@gmail.com', $get_name);
@@ -51,7 +50,7 @@ if (isset($_POST['password_reset_link'])) {
 $check_email = mysqli_query($conn, $check);
 
 if ($check_email === false) {
-    // Handle query error
+    
     echo "Query error: " . mysqli_error($conn);
     exit(0);
 }

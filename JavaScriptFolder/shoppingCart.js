@@ -1,4 +1,16 @@
 
+
+
+document.addEventListener("DOMContentLoaded", function () {
+const continuePurchaseBtn = document.getElementById('continuePurchaseBtn');
+    continuePurchaseBtn.addEventListener('click', function () {
+        const totalAmount = parseFloat(document.querySelector('.Total-Amount').textContent.slice(15));
+        if (totalAmount > 0) {
+            window.location.href = '/Website-project/HTMLFolder/PurchaseOptions.html';
+        }
+    });
+});
+
 function updateTotalAmount() {
   let totalAmount = 0;
   const rows = document.querySelectorAll('#shoppingCartBody .row');
@@ -86,10 +98,8 @@ function decrementQuantity(row) {
         quantity--;
         quantityInput.value = quantity;
 
-        // Update the total price
         updateTotalPrice(row);
 
-        // Update the quantity in localStorage
         const productName = row.querySelector('.col:first-of-type').textContent;
         const productSize = row.querySelector('.col:nth-of-type(2)').textContent;
         let existingData = localStorage.getItem("myData");
