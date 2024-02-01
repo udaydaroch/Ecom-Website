@@ -13,13 +13,13 @@ function send_password_reset($get_name, $get_email, $token) {
     $mail->isSMTP();
     $mail->SMTPAuth = true;
     $mail->Host = 'smtp.gmail.com';
-    $mail->Username = 'Jumbo@gmail.com';
+    $mail->Username = 'UdayDaroch@gmail.com';
     $mail->Password = 'mlpgquhwcdjlhkpx';  // Replace with your actual SMTP password
 
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; // or PHPMailer::ENCRYPTION_SMTPS
     $mail->Port = 587; // or 465
 
-    $mail->setFrom('Jumbo@gmail.com', $get_name);
+    $mail->setFrom('UdayDaroch@gmail.com', $get_name);
     $mail->addAddress($get_email);
     $mail->isHTML(true);
 
@@ -95,7 +95,8 @@ if(isset($_POST['confirm_press'])) {
                 $check_token_run = mysqli_query($conn, $check_token);
                 if (mysqli_num_rows($check_token_run) > 0) {
                     if($new_password == $confirm_new_password) {
-                        $update_password = "UPDATE user_info SET password='$new_password' WHERE  passwordToken='$token' LIMIT 1";
+                        $hashedNewPassword = password_hash($new_password, PASSWORD_DEFAULT);
+                        $update_password = "UPDATE user_info SET password='$hashedNewPassword' WHERE passwordToken='$token' LIMIT 1";
                         $update_password_run = mysqli_query($conn,$update_password);
                         if($update_password_run) {
                             $_SESSION['status'] = "password has successfully being changed";

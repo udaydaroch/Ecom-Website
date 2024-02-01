@@ -1,3 +1,4 @@
+
 function autofillUpdateForm(productId) {
     
   fetch(`/Website-project/PHPFolder/get_product_details.php?id=${productId}`)
