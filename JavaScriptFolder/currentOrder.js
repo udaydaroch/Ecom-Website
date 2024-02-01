@@ -24,7 +24,7 @@ function loadDeliveryOrders() {
           </tbody>
       </table>
   `;
-  // Add code to fetch and populate data for the table from the server
+
 }
 
 function loadPickupOrders() {
