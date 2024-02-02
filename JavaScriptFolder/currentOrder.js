@@ -1,14 +1,33 @@
 
+
 function loadDeliveryOrders() {
   clearSections();
   
-  // Load filter content for delivery orders
   const filterSection = document.getElementById("filterSection");
+  
   filterSection.innerHTML = `
-      <h3>Delivery Orders Filters</h3>
-      <!-- Add your filter options here -->
-  `;
-
+  <div class="row justify-content-center">
+  <div class="card" style="max-width: 1000px;">
+    <div class="card-body">
+      <h3 class="card-title">Delivery Orders Filters</h3>
+      
+      <div>
+        <label for="orderDate">Order Date:</label>
+        <select id="orderDate" class="form-select">
+          <option value="12months">Orders within 12 Months</option>
+          <option value="current">Current Orders</option>
+        </select>
+      </div>
+      
+      <div class="mt-3">
+      <div class="row justify-content-center"> 
+        <button style="max-width: 200px;" class="btn btn-primary">Apply Filters</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+`;
   // Load table content for delivery orders
   const tableSection = document.getElementById("tableSection");
   tableSection.innerHTML = `
