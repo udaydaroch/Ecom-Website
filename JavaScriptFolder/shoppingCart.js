@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
 const continuePurchaseBtn = document.getElementById('continuePurchaseBtn');
     continuePurchaseBtn.addEventListener('click', function () {
         const totalAmount = parseFloat(document.querySelector('.Total-Amount').textContent.slice(15));
+        console.log(totalAmount);
         if (totalAmount > 0) {
             window.location.href = '/Website-project/HTMLFolder/PurchaseOptions.html';
         }

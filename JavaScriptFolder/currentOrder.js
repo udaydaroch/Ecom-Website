@@ -21,13 +21,27 @@ function loadDeliveryOrders() {
       
       <div class="mt-3">
       <div class="row justify-content-center"> 
-        <button style="max-width: 200px;" class="btn btn-primary">Apply Filters</button>
+        <button id="applyFiltersButton" style="max-width: 200px;" class="btn btn-primary">Apply Filters</button>
         </div>
       </div>
     </div>
   </div>
   </div>
 `;
+const applyFiltersButton = document.querySelector('#applyFiltersButton');
+applyFiltersButton.addEventListener('click', () => {
+    // Call the currentOrder.php endpoint
+    fetch('/Website-project/PHPFolder/currentOrder.php')
+        .then(response => response.text())
+        .then(data => {
+            // Populate the table with the data returned from the server
+            const tableBody = document.querySelector('#tableSection tbody');
+            tableBody.innerHTML = data;
+        })
+        .catch(error => {
+            console.error('Error fetching current orders:', error);
+        });
+});
   // Load table content for delivery orders
   const tableSection = document.getElementById("tableSection");
   tableSection.innerHTML = `
@@ -109,3 +123,4 @@ function clearSections() {
   filterSection.innerHTML = "";
   tableSection.innerHTML = "";
 }
+
