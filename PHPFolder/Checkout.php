@@ -1,22 +1,40 @@
 <?php
 
 session_start();
-require("connection.php"); 
+require("connection.php");
+if (isset($_SESSION['user_authenticated']) && $_SESSION['user_authenticated'] === true) {
+$username = $_SESSION["username"];
+$query = "SELECT id FROM user_info WHERE username = ?";
+$stmt = $conn->prepare($query);
 
-$userId = 9;
-$clothingId = 54;
-$purchaseDate = date('Y-m-d H:i:s'); 
-$clothingSize = 'M'; 
-$clothingPrice = 75; 
-$deliveryType = 'D'; 
+if (!$stmt) {
+    die("Error preparing statement: " . $conn->error);
+}
+$stmt->bind_param('s', $username);
+$stmt->execute();
+$stmt->bind_result($userId);
+$stmt->fetch();
+$stmt->close();
+}
+else {
+    $userId = null;
+} 
 
-$query = "INSERT INTO user_purchases (user_id, clothing_id, purchase_date, clothing_Size, clothing_price, deliveryTYPE)
+
+
+$clothingId = $_POST["clothing_id"];
+$purchaseDate = date('Y-m-d H:i:s');
+$clothingSize = $_POST["clothingSize"];
+$clothingPrice = $_POST["clothingPrice"];
+$deliveryType = $_POST["orderTYPE"]; // Assuming "pickupDelivery" corresponds to "orderTYPE"
+
+$query = "INSERT INTO user_purchases (user_id, clothing_id, purchase_date, clothing_Size, clothing_price, orderTYPE)
           VALUES (?, ?, ?, ?, ?, ?)";
 
 $stmt = $conn->prepare($query);
 
 if (!$stmt) {
-    die("Error preparing statement: " . $mysqli->error);
+    die("Error preparing statement: " . $conn->error);
 }
 
 $stmt->bind_param('iissis', $userId, $clothingId, $purchaseDate, $clothingSize, $clothingPrice, $deliveryType);
@@ -29,6 +47,6 @@ if (!$result) {
 
 $stmt->close();
 
-echo "Sample data inserted successfully.";
+echo "Data inserted successfully.";
 
 ?>

@@ -6,7 +6,7 @@ session_start();
 
 if (isset($_SESSION['user_authenticated']) && $_SESSION['user_authenticated'] === true) {
     $option = $_GET['option'];
-
+    $TYPE = $_GET['orderTYPE'];
     $currentDate = date('Y-m-d H:i');
 
     if ($option === '12months') {
@@ -17,10 +17,10 @@ if (isset($_SESSION['user_authenticated']) && $_SESSION['user_authenticated'] ==
         $endDate = $currentDate;
     }
 
-    $query = "SELECT * FROM user_purchases WHERE purchase_date BETWEEN ? AND ?";
+    $query = "SELECT * FROM user_purchases WHERE purchase_date BETWEEN ? AND ? AND orderTYPE = ? " ;
     
     $stmt = mysqli_prepare($conn, $query);
-    $stmt->bind_param('ss', $startDate, $endDate);
+    $stmt->bind_param('sss', $startDate, $endDate,$TYPE);
     $stmt->execute();
     $result = $stmt->get_result();
 

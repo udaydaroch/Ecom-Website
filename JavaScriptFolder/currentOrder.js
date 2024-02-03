@@ -41,7 +41,7 @@ function loadDeliveryOrders() {
                 
                   if (data.userRole === 'admin') {
                       // For admin users, call currentOrderAdmin.php
-                      fetch(`/Website-project/PHPFolder/currentOrderAdmin.php?option=${selectedOption}`)
+                      fetch(`/Website-project/PHPFolder/currentOrderAdmin.php?option=${selectedOption}&orderTYPE=D`)
                           .then(response => response.text())
                           .then(data => {
                               // Populate the table with the data returned from the server
