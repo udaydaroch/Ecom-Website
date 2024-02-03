@@ -73,7 +73,7 @@ function generateCards(data, container) {
 
   for (let i = 0; i < data.length; i++) {
     var colDiv = document.createElement('div');
-    colDiv.className = 'col-lg-3 col-md-4 col-sm-6 offset-sm-0';
+    colDiv.className = 'col-lg-3 col-md-3 col-sm-6 offset-sm-0';
 
     var cardDiv = document.createElement('div');
     cardDiv.className = 'card mb-4 shadow-lg';

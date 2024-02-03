@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['username'] = $userDetails['userName'];
 
             // Redirect to the dashboard
-            header("Location: /Website-project/HTMLFolder/dashboard.html");
+            header("Location: /Website-project/HTMLFolder/Dashboard.html");
             exit(); // Make sure to exit after sending the header to prevent further execution
         } else {
             // Invalid password

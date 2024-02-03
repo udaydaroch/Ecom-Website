@@ -14,9 +14,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
                   window.location.href = '/Website-project/HTMLFolder/login.html';
               } else {
+                console.log(window.location.pathname);
+                if (window.location.pathname === "/Website-project/HTMLFolder/Dashboard.html") {
                   console.log('Generating dashboard for user role:', response.userRole);
                   userRole = response.userRole;
                   generateDashboard();
+                }
               }
           } else {
               console.error('Error fetching user data. Redirecting to login page.');

@@ -86,6 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 } else {
                     // Product doesn't exist, add new entry
                     selectedProduct = {
+                        id:productId,
                         name: productName,
                         size: selectedSize,
                         price: pricePerItem * quantity,
