@@ -38,7 +38,6 @@ function loadDeliveryOrders() {
           .then(response => response.json())
           .then(data => {
               if (data.user_authenticated) {
-                
                   if (data.userRole === 'admin') {
                       // For admin users, call currentOrderAdmin.php
                       fetch(`/Website-project/PHPFolder/currentOrderAdmin.php?option=${selectedOption}&orderTYPE=D`)
